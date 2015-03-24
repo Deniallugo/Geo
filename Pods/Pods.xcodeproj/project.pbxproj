@@ -1,0 +1,936 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		008DE1735D57D69FF734A10F /* JSQMessagesLoadEarlierHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17886B51B66DC009235E529B /* JSQMessagesLoadEarlierHeaderView.m */; };
+		00CE95FD66D987046EC825A0 /* Pods-JSQSystemSoundPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7C2AD4D3CFF094657103A /* Pods-JSQSystemSoundPlayer-dummy.m */; };
+		0387B5B0BE7E742CA4461E0A /* NSString+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BA3BFD2B3AEEFD6E2160580 /* NSString+JSQMessages.h */; };
+		065284061441E937F6065A40 /* JSQMessagesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E9C6FA462967B88D46F970 /* JSQMessagesLabel.m */; };
+		070CA1FA109660510A2028A3 /* UIColor+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = EA56E48FE0A64495712A8901 /* UIColor+JSQMessages.h */; };
+		0B424491F89711F7162F7D90 /* JSQMessagesCollectionViewCellIncoming.h in Headers */ = {isa = PBXBuildFile; fileRef = ED582D313BDCA29423E3F313 /* JSQMessagesCollectionViewCellIncoming.h */; };
+		106039622A3E9E9D321E6878 /* JSQMessagesBubbleImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1095EBF2CA32AB22F395B1CA /* JSQMessagesBubbleImage.h */; };
+		116F539558D59C2F3C9DFCA2 /* NSString+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 725CAB20E15E49C603C3E7DC /* NSString+JSQMessages.m */; };
+		12822F0C35AF81C060F88D3B /* NSBundle+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCDB1AB3ABDDF7DAFB07D60 /* NSBundle+JSQMessages.h */; };
+		16DA71E53B41C43732AF2DD4 /* JSQMessagesComposerTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B2313F5E790EC63582494 /* JSQMessagesComposerTextView.m */; };
+		1FB991439B3AA83AC53A1609 /* JSQMessagesAvatarImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D1683F4632220161458A0 /* JSQMessagesAvatarImageFactory.m */; };
+		240615D90A6BF163AD6066EF /* JSQMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 96E28F6E2182CBB472FE3A0A /* JSQMediaItem.h */; };
+		25AEBC35FA132DBECB557726 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F58432DDB4EB80C07A44B61 /* Foundation.framework */; };
+		261A41BFD2A7B2241F74383A /* Pods-JSQMessagesViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D643E009D16BC4C21061CE /* Pods-JSQMessagesViewController-dummy.m */; };
+		355BBF0DC62673FEEF85647A /* JSQMessagesKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = E725D16FC1E7979F0C04F6A2 /* JSQMessagesKeyboardController.m */; };
+		356FE7C7C047466D5C4799A0 /* JSQMessagesLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C71D6F96BE0FE7540E13268A /* JSQMessagesLabel.h */; };
+		35FB46F70C507F3E8CA931AA /* JSQSystemSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EF12A288A3C57E02CAD69082 /* JSQSystemSoundPlayer.m */; };
+		37694E9BDD97CEF66F49DAEE /* JSQMessagesCollectionViewCellOutgoing.h in Headers */ = {isa = PBXBuildFile; fileRef = DFBC3AEBA21B3B9001545DE1 /* JSQMessagesCollectionViewCellOutgoing.h */; };
+		37C4F3E1FA29B0D22F97D911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FE901B66BDC5FB8A5DFE85 /* UIKit.framework */; };
+		3969BB8DC65D9BCDFBE3F034 /* JSQVideoMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3D09B2D8468A696D3FFC0D /* JSQVideoMediaItem.m */; };
+		3A7B951D6E27A0C0BE6340A0 /* UIImage+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 93093AB44FB82BBA3A85164B /* UIImage+JSQMessages.h */; };
+		3DD61830915B4962A06F00D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FE901B66BDC5FB8A5DFE85 /* UIKit.framework */; };
+		426630A061AB1BC0250DEECB /* JSQMessagesCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAF127FF1EEE21B20E123DF /* JSQMessagesCollectionViewFlowLayout.m */; };
+		428E8349CDEB880A5F603DC8 /* JSQMessagesMediaPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A4DD6099BB2610D6CA8553 /* JSQMessagesMediaPlaceholderView.m */; };
+		438EA62E8DB5597A00B41ECE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B90836DBDF5F5A6126EE704 /* AudioToolbox.framework */; };
+		4CDD2F042248C40E9FD6DA3C /* JSQSystemSoundPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 231C539D507C7764705E1B6D /* JSQSystemSoundPlayer.h */; };
+		50049520F87DB60AC53753A4 /* JSQMessagesAvatarImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F5F94054BA0535E2AE14263 /* JSQMessagesAvatarImage.h */; };
+		50CFB5A412935E68DFAE94F6 /* NSBundle+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 616B56526CF88292988E1A84 /* NSBundle+JSQMessages.m */; };
+		55C91F6A7B4E0BE0760F25E2 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1BAA3AC9964C8B39248384 /* JSQMessagesCollectionViewCellOutgoing.m */; };
+		59353E4E94CD3E97CC08F7AA /* JSQMessagesTimestampFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = BD6FBE22D7D085F1C71A26EB /* JSQMessagesTimestampFormatter.h */; };
+		6009C67E5AF065712CE1370D /* JSQSystemSoundPlayer+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 31984969446D8F1C05F9E895 /* JSQSystemSoundPlayer+JSQMessages.h */; };
+		62CD7BDEC249B44E117DAF75 /* JSQMessagesCollectionViewCellIncoming.m in Sources */ = {isa = PBXBuildFile; fileRef = F31A81920BAC60B4F832BC2D /* JSQMessagesCollectionViewCellIncoming.m */; };
+		680B33B36169A56CE7E6424B /* JSQPhotoMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E4E907E7C7BEF458B8B30D /* JSQPhotoMediaItem.m */; };
+		6811E59ED8156C2A2202EA36 /* JSQMessagesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DA0F0A618E80A241AB43CE /* JSQMessagesCollectionViewCell.m */; };
+		6B497E8D53B344E64BA2CD4B /* UIDevice+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 735B1F91978B9F42C07295E4 /* UIDevice+JSQMessages.m */; };
+		723BF7B3AB718F78C5D73681 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233DD1C64078CA431925BC3E /* CoreLocation.framework */; };
+		729839EE047AEC20AF1EA86E /* JSQMessagesCollectionViewDelegateFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 68A0867DCD65F1F06E3CA01A /* JSQMessagesCollectionViewDelegateFlowLayout.h */; };
+		72F0CB5636B813C214C19611 /* JSQMessagesMediaViewBubbleImageMasker.h in Headers */ = {isa = PBXBuildFile; fileRef = 000104C67BA486045990AA8E /* JSQMessagesMediaViewBubbleImageMasker.h */; };
+		738FF0D617D54CE645597775 /* JSQMessagesToolbarContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5D8FA580C78C2FD0C631A3 /* JSQMessagesToolbarContentView.h */; };
+		757BAE07DAC4785DB971F5C7 /* JSQMessagesBubbleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F58DA7403914950FE370621E /* JSQMessagesBubbleImage.m */; };
+		78BDF6FD878B65FF92B8DBEA /* JSQMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BA6A1093DEEB7058CCFDCF /* JSQMessage.m */; };
+		7B288DD1A79584E874107641 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */ = {isa = PBXBuildFile; fileRef = 510DD8985BE60D4B162C9B92 /* JSQMessagesMediaViewBubbleImageMasker.m */; };
+		7C9B8CD985FFB87F872B40B9 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4271444602F25B2ACDB36DD0 /* Pods-dummy.m */; };
+		7F42DFBEA577057EC06C6C6E /* JSQMessagesCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3553E67C5361B9E1CF7E42 /* JSQMessagesCollectionViewDataSource.h */; };
+		80A802DB37B0399D42E01A19 /* UIView+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = FE886625CEFA9DBE67095E91 /* UIView+JSQMessages.m */; };
+		8512001FCCE65A8648388A6C /* UIView+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BD8D493F1A3A46CC40B58 /* UIView+JSQMessages.h */; };
+		86C02D030D6F420827023B86 /* JSQMessageBubbleImageDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D37E2D871B3C03E59767CAB /* JSQMessageBubbleImageDataSource.h */; };
+		88B6B7F0E26F6D45D944494A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6961EB119ED738D3D44AFFF0 /* CoreGraphics.framework */; };
+		890F37C870D76C17E15DEF49 /* JSQMessagesCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 16A0E1B3A5CFC405F37596AF /* JSQMessagesCollectionView.h */; };
+		89670A21DAA5B467868F3D2D /* JSQMessagesTypingIndicatorFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D48030895AD43A52AFE10 /* JSQMessagesTypingIndicatorFooterView.m */; };
+		8CBF6BB66F161A435DECEEE1 /* JSQMessagesAvatarImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC8D31FF69607E088566578 /* JSQMessagesAvatarImageFactory.h */; };
+		94FF522315F06AE5A1F7832D /* JSQMessagesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 786BE794666297D05D61CE4D /* JSQMessagesViewController.h */; };
+		960A18D4CDE8B392B63EB5A5 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3F39A684A0CA6B34FACDB2 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h */; };
+		96F28A097C37927E00B32AC8 /* JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = BC4CF21FE0173DC6B300A355 /* JSQMessages.h */; };
+		97C5FA7800A7B2B7C7E2A941 /* JSQMessagesTypingIndicatorFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A76C9D4A1B369D53B0985AD /* JSQMessagesTypingIndicatorFooterView.h */; };
+		987A75ED81A817C6D0EFB9FE /* JSQMessagesKeyboardController.h in Headers */ = {isa = PBXBuildFile; fileRef = AA2985BB93A622C572650A31 /* JSQMessagesKeyboardController.h */; };
+		9DCE03A71C67A630DAFBAD00 /* JSQMessagesCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 040725B521D12B23258D2245 /* JSQMessagesCollectionViewFlowLayout.h */; };
+		A051B29ED47B3AD9A24305BD /* UIDevice+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = BE9C52D7C25482B68DF94F1B /* UIDevice+JSQMessages.h */; };
+		A0C97085F57BE6443F53DC0F /* JSQMessageData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CC5A443EB929218AABEA226 /* JSQMessageData.h */; };
+		A1A50B62DFE7EBBC7529A734 /* JSQMessagesToolbarButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149F41170EA91F82EDFC536 /* JSQMessagesToolbarButtonFactory.m */; };
+		A1FC7EAED1FBE37A8CED18F0 /* JSQMessagesInputToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A74F993F81C631F81205AD0B /* JSQMessagesInputToolbar.m */; };
+		A4EF7B02A21CACC4FA58852F /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAC018061578C5C435ADF1D /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m */; };
+		A559D2DAEE6212C2A1B3163E /* JSQMessagesCollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C99268BE428FD633AC6504 /* JSQMessagesCollectionViewLayoutAttributes.h */; };
+		A73AECB6EB013995AE8CE626 /* JSQMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FFEE3C62BF67CF978CAC47E8 /* JSQMessage.h */; };
+		A804649D3CA02054640F6E13 /* JSQMessagesBubbleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 703C68C71B5E99FFE1E3B310 /* JSQMessagesBubbleImageFactory.m */; };
+		A86D382A6C57A0C0D1A80635 /* UIColor+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1799276D6EEF2441633345C1 /* UIColor+JSQMessages.m */; };
+		AAD7CCB9A9D598522F2A82DC /* JSQSystemSoundPlayer+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = FCAB01432AE3168E4566E79E /* JSQSystemSoundPlayer+JSQMessages.m */; };
+		ACB6BD4B7B77A1AD0C2D5734 /* JSQMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 710F0E570254654167F562DC /* JSQMediaItem.m */; };
+		AE4B886C7ED5E5E94F95DBC0 /* JSQMessagesCellTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = C75B6C7D32FE6ED89A67D255 /* JSQMessagesCellTextView.h */; };
+		AEFD9F1C68F879F702154574 /* JSQMessagesAvatarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F848F3B35204E60DF2F9FE87 /* JSQMessagesAvatarImage.m */; };
+		AF732DCD0C6F42D9A67156CD /* JSQMessageAvatarImageDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 526A51EC5AAAAF02B3CC536B /* JSQMessageAvatarImageDataSource.h */; };
+		B25CFC45FB5151619B9F403E /* JSQMessagesCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A27E2AC87CC26E27442703D8 /* JSQMessagesCollectionViewCell.h */; };
+		B2DF738B7857DD6C87457BEF /* UIImage+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFE9FCDCBE7B5AB48C7B74B /* UIImage+JSQMessages.m */; };
+		B60EC69F7FCAB0B0D251F87D /* JSQMessagesMediaPlaceholderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 35904472EA7E39E99F14C77D /* JSQMessagesMediaPlaceholderView.h */; };
+		B661E6BA95EE466CA5D11DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F58432DDB4EB80C07A44B61 /* Foundation.framework */; };
+		BF05A06D0DD2098E9F898E0B /* JSQMessageMediaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 266E3C1B8A09EC5052A52425 /* JSQMessageMediaData.h */; };
+		C0164537A69D4BFA2F56F541 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA84584DA7D6BBAE74ACBAC /* QuartzCore.framework */; };
+		C03805950BB03F9DD9CB8729 /* JSQMessagesToolbarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DB14588F3DDA5964093411 /* JSQMessagesToolbarContentView.m */; };
+		C03F5EC825C9753A1643C95F /* JSQMessagesInputToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = E8C305AD9BEA283E7241EFA2 /* JSQMessagesInputToolbar.h */; };
+		C162FEDC234D2ECED45C0E6D /* JSQMessagesTimestampFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C980133BA86ABCAA012768 /* JSQMessagesTimestampFormatter.m */; };
+		C3D7F90D0A8AE31ED393ABAF /* JSQMessagesLoadEarlierHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 08E486F17B35FC35B1B5430A /* JSQMessagesLoadEarlierHeaderView.h */; };
+		C5F2A0AFDEF86BEBA514643C /* JSQMessagesCellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 176191D2FC16E90A7CFFF9E6 /* JSQMessagesCellTextView.m */; };
+		C8F8A5DD71A08B4C6181EA05 /* JSQPhotoMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = D431D61F9B537952BCC46B45 /* JSQPhotoMediaItem.h */; };
+		C942B65389EA3A66C882435C /* JSQMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 839BB6C554BED432E1E2EEAC /* JSQMessagesViewController.m */; };
+		D378700EAFC22F08A00724F8 /* JSQLocationMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 21A2ACA98C13085BB315D55D /* JSQLocationMediaItem.h */; };
+		D62EBF757A88F770168C2E7A /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BA91801EA9D255E470B796 /* JSQMessagesCollectionViewLayoutAttributes.m */; };
+		D7294ED93EA0C6BAD58315BF /* JSQLocationMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFBA91A4821E5CD2C877F95 /* JSQLocationMediaItem.m */; };
+		DB559C7F92539C361653E6C1 /* JSQMessagesComposerTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2396E82F0E4EDDF7158A85D8 /* JSQMessagesComposerTextView.h */; };
+		DDB3FE2A89BDFF9FB8347C61 /* JSQMessagesBubbleImageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 86394F06BD573F145A119B43 /* JSQMessagesBubbleImageFactory.h */; };
+		E424A81F6BEF77263B50A1CE /* JSQMessagesToolbarButtonFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = AC442FA63690E8880E8FB8E6 /* JSQMessagesToolbarButtonFactory.h */; };
+		EB6CFF8A795FE178A54FA73E /* JSQVideoMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A428891323FEB163817156A0 /* JSQVideoMediaItem.h */; };
+		F22DEAA43A29A8BFD34682BD /* JSQMessagesCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F62E076631C7C1BFBAE78F /* JSQMessagesCollectionView.m */; };
+		F24AB933F2E008813C3B946B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F58432DDB4EB80C07A44B61 /* Foundation.framework */; };
+		F7DBC9EC8FEE25B2668EBA74 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C86D7342B2D62D543CDA2F /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6BF3D127C7DCE3D62B87209F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E57DD73A5746823877F7DB70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69DBDD1A0693D770CC52FFA4;
+			remoteInfo = "Pods-JSQSystemSoundPlayer";
+		};
+		8228C9C5406D247FEDE88142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E57DD73A5746823877F7DB70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69DBDD1A0693D770CC52FFA4;
+			remoteInfo = "Pods-JSQSystemSoundPlayer";
+		};
+		9003576F3DB2D5720E897F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E57DD73A5746823877F7DB70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E29760E3423356F74A82CF96;
+			remoteInfo = "Pods-JSQMessagesViewController";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000104C67BA486045990AA8E /* JSQMessagesMediaViewBubbleImageMasker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesMediaViewBubbleImageMasker.h; path = JSQMessagesViewController/Factories/JSQMessagesMediaViewBubbleImageMasker.h; sourceTree = "<group>"; };
+		0126EFD0065E6DD6E2EFEFEF /* JSQMessagesAssets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = JSQMessagesAssets.bundle; path = JSQMessagesViewController/Assets/JSQMessagesAssets.bundle; sourceTree = "<group>"; };
+		0149F41170EA91F82EDFC536 /* JSQMessagesToolbarButtonFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesToolbarButtonFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesToolbarButtonFactory.m; sourceTree = "<group>"; };
+		040725B521D12B23258D2245 /* JSQMessagesCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewFlowLayout.h; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		05F62E076631C7C1BFBAE78F /* JSQMessagesCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionView.m; path = JSQMessagesViewController/Views/JSQMessagesCollectionView.m; sourceTree = "<group>"; };
+		06BA6A1093DEEB7058CCFDCF /* JSQMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessage.m; path = JSQMessagesViewController/Model/JSQMessage.m; sourceTree = "<group>"; };
+		08E486F17B35FC35B1B5430A /* JSQMessagesLoadEarlierHeaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesLoadEarlierHeaderView.h; path = JSQMessagesViewController/Views/JSQMessagesLoadEarlierHeaderView.h; sourceTree = "<group>"; };
+		0AFE9FCDCBE7B5AB48C7B74B /* UIImage+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+JSQMessages.m"; path = "JSQMessagesViewController/Categories/UIImage+JSQMessages.m"; sourceTree = "<group>"; };
+		0CC5A443EB929218AABEA226 /* JSQMessageData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessageData.h; path = JSQMessagesViewController/Model/JSQMessageData.h; sourceTree = "<group>"; };
+		0DB7C2AD4D3CFF094657103A /* Pods-JSQSystemSoundPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSQSystemSoundPlayer-dummy.m"; sourceTree = "<group>"; };
+		1095EBF2CA32AB22F395B1CA /* JSQMessagesBubbleImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesBubbleImage.h; path = JSQMessagesViewController/Model/JSQMessagesBubbleImage.h; sourceTree = "<group>"; };
+		12C99268BE428FD633AC6504 /* JSQMessagesCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewLayoutAttributes.h; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		16A0E1B3A5CFC405F37596AF /* JSQMessagesCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionView.h; path = JSQMessagesViewController/Views/JSQMessagesCollectionView.h; sourceTree = "<group>"; };
+		176191D2FC16E90A7CFFF9E6 /* JSQMessagesCellTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCellTextView.m; path = JSQMessagesViewController/Views/JSQMessagesCellTextView.m; sourceTree = "<group>"; };
+		17886B51B66DC009235E529B /* JSQMessagesLoadEarlierHeaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesLoadEarlierHeaderView.m; path = JSQMessagesViewController/Views/JSQMessagesLoadEarlierHeaderView.m; sourceTree = "<group>"; };
+		1799276D6EEF2441633345C1 /* UIColor+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+JSQMessages.m"; path = "JSQMessagesViewController/Categories/UIColor+JSQMessages.m"; sourceTree = "<group>"; };
+		1A3553E67C5361B9E1CF7E42 /* JSQMessagesCollectionViewDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewDataSource.h; path = JSQMessagesViewController/Model/JSQMessagesCollectionViewDataSource.h; sourceTree = "<group>"; };
+		1D2D48030895AD43A52AFE10 /* JSQMessagesTypingIndicatorFooterView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesTypingIndicatorFooterView.m; path = JSQMessagesViewController/Views/JSQMessagesTypingIndicatorFooterView.m; sourceTree = "<group>"; };
+		1E87C899798884472771BA55 /* Pods-JSQMessagesViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSQMessagesViewController-prefix.pch"; sourceTree = "<group>"; };
+		1F2263DB0AAF99709E2FD874 /* Pods-JSQSystemSoundPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSQSystemSoundPlayer-prefix.pch"; sourceTree = "<group>"; };
+		21A2ACA98C13085BB315D55D /* JSQLocationMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQLocationMediaItem.h; path = JSQMessagesViewController/Model/JSQLocationMediaItem.h; sourceTree = "<group>"; };
+		231C539D507C7764705E1B6D /* JSQSystemSoundPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQSystemSoundPlayer.h; path = JSQSystemSoundPlayer/Classes/JSQSystemSoundPlayer.h; sourceTree = "<group>"; };
+		233DD1C64078CA431925BC3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		2396E82F0E4EDDF7158A85D8 /* JSQMessagesComposerTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesComposerTextView.h; path = JSQMessagesViewController/Views/JSQMessagesComposerTextView.h; sourceTree = "<group>"; };
+		24BA91801EA9D255E470B796 /* JSQMessagesCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewLayoutAttributes.m; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		266E3C1B8A09EC5052A52425 /* JSQMessageMediaData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessageMediaData.h; path = JSQMessagesViewController/Model/JSQMessageMediaData.h; sourceTree = "<group>"; };
+		2BCDB1AB3ABDDF7DAFB07D60 /* NSBundle+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+JSQMessages.h"; path = "JSQMessagesViewController/Categories/NSBundle+JSQMessages.h"; sourceTree = "<group>"; };
+		31984969446D8F1C05F9E895 /* JSQSystemSoundPlayer+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JSQSystemSoundPlayer+JSQMessages.h"; path = "JSQMessagesViewController/Categories/JSQSystemSoundPlayer+JSQMessages.h"; sourceTree = "<group>"; };
+		35904472EA7E39E99F14C77D /* JSQMessagesMediaPlaceholderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesMediaPlaceholderView.h; path = JSQMessagesViewController/Views/JSQMessagesMediaPlaceholderView.h; sourceTree = "<group>"; };
+		3A826519487F04457A202A49 /* JSQMessagesTypingIndicatorFooterView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesTypingIndicatorFooterView.xib; path = JSQMessagesViewController/Views/JSQMessagesTypingIndicatorFooterView.xib; sourceTree = "<group>"; };
+		3B6B2313F5E790EC63582494 /* JSQMessagesComposerTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesComposerTextView.m; path = JSQMessagesViewController/Views/JSQMessagesComposerTextView.m; sourceTree = "<group>"; };
+		3F5F94054BA0535E2AE14263 /* JSQMessagesAvatarImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesAvatarImage.h; path = JSQMessagesViewController/Model/JSQMessagesAvatarImage.h; sourceTree = "<group>"; };
+		4271444602F25B2ACDB36DD0 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		46D643E009D16BC4C21061CE /* Pods-JSQMessagesViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSQMessagesViewController-dummy.m"; sourceTree = "<group>"; };
+		4BA3BFD2B3AEEFD6E2160580 /* NSString+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+JSQMessages.h"; path = "JSQMessagesViewController/Categories/NSString+JSQMessages.h"; sourceTree = "<group>"; };
+		4DFBA91A4821E5CD2C877F95 /* JSQLocationMediaItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQLocationMediaItem.m; path = JSQMessagesViewController/Model/JSQLocationMediaItem.m; sourceTree = "<group>"; };
+		4F58432DDB4EB80C07A44B61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		510DD8985BE60D4B162C9B92 /* JSQMessagesMediaViewBubbleImageMasker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesMediaViewBubbleImageMasker.m; path = JSQMessagesViewController/Factories/JSQMessagesMediaViewBubbleImageMasker.m; sourceTree = "<group>"; };
+		526A51EC5AAAAF02B3CC536B /* JSQMessageAvatarImageDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessageAvatarImageDataSource.h; path = JSQMessagesViewController/Model/JSQMessageAvatarImageDataSource.h; sourceTree = "<group>"; };
+		616B56526CF88292988E1A84 /* NSBundle+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+JSQMessages.m"; path = "JSQMessagesViewController/Categories/NSBundle+JSQMessages.m"; sourceTree = "<group>"; };
+		68A0867DCD65F1F06E3CA01A /* JSQMessagesCollectionViewDelegateFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewDelegateFlowLayout.h; path = JSQMessagesViewController/Model/JSQMessagesCollectionViewDelegateFlowLayout.h; sourceTree = "<group>"; };
+		6961EB119ED738D3D44AFFF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		6A9C744A8942998C54305C4F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6C6462C11547448C5AF323D4 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		6FB72ADBECF4751BDBE89B58 /* JSQMessagesViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesViewController.xib; path = JSQMessagesViewController/Controllers/JSQMessagesViewController.xib; sourceTree = "<group>"; };
+		703C68C71B5E99FFE1E3B310 /* JSQMessagesBubbleImageFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesBubbleImageFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesBubbleImageFactory.m; sourceTree = "<group>"; };
+		710F0E570254654167F562DC /* JSQMediaItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMediaItem.m; path = JSQMessagesViewController/Model/JSQMediaItem.m; sourceTree = "<group>"; };
+		725CAB20E15E49C603C3E7DC /* NSString+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+JSQMessages.m"; path = "JSQMessagesViewController/Categories/NSString+JSQMessages.m"; sourceTree = "<group>"; };
+		735B1F91978B9F42C07295E4 /* UIDevice+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+JSQMessages.m"; path = "JSQMessagesViewController/Categories/UIDevice+JSQMessages.m"; sourceTree = "<group>"; };
+		75E9C6FA462967B88D46F970 /* JSQMessagesLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesLabel.m; path = JSQMessagesViewController/Views/JSQMessagesLabel.m; sourceTree = "<group>"; };
+		76E4E907E7C7BEF458B8B30D /* JSQPhotoMediaItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQPhotoMediaItem.m; path = JSQMessagesViewController/Model/JSQPhotoMediaItem.m; sourceTree = "<group>"; };
+		781BD8D493F1A3A46CC40B58 /* UIView+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+JSQMessages.h"; path = "JSQMessagesViewController/Categories/UIView+JSQMessages.h"; sourceTree = "<group>"; };
+		786BE794666297D05D61CE4D /* JSQMessagesViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesViewController.h; path = JSQMessagesViewController/Controllers/JSQMessagesViewController.h; sourceTree = "<group>"; };
+		7B36196096FA8A69CBBAE56D /* libPods-JSQMessagesViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQMessagesViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8363F17E1AC065F4007931BD /* ok.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ok.jpg; sourceTree = "<group>"; };
+		839BB6C554BED432E1E2EEAC /* JSQMessagesViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesViewController.m; path = JSQMessagesViewController/Controllers/JSQMessagesViewController.m; sourceTree = "<group>"; };
+		86394F06BD573F145A119B43 /* JSQMessagesBubbleImageFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesBubbleImageFactory.h; path = JSQMessagesViewController/Factories/JSQMessagesBubbleImageFactory.h; sourceTree = "<group>"; };
+		8B90836DBDF5F5A6126EE704 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		8D37E2D871B3C03E59767CAB /* JSQMessageBubbleImageDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessageBubbleImageDataSource.h; path = JSQMessagesViewController/Model/JSQMessageBubbleImageDataSource.h; sourceTree = "<group>"; };
+		8FDBFE6C5703620D29C54ABA /* JSQMessagesToolbarContentView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesToolbarContentView.xib; path = JSQMessagesViewController/Views/JSQMessagesToolbarContentView.xib; sourceTree = "<group>"; };
+		93093AB44FB82BBA3A85164B /* UIImage+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+JSQMessages.h"; path = "JSQMessagesViewController/Categories/UIImage+JSQMessages.h"; sourceTree = "<group>"; };
+		96E28F6E2182CBB472FE3A0A /* JSQMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMediaItem.h; path = JSQMessagesViewController/Model/JSQMediaItem.h; sourceTree = "<group>"; };
+		97FE901B66BDC5FB8A5DFE85 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		99A5EA59299805F5DD5B3C8D /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		9A76C9D4A1B369D53B0985AD /* JSQMessagesTypingIndicatorFooterView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesTypingIndicatorFooterView.h; path = JSQMessagesViewController/Views/JSQMessagesTypingIndicatorFooterView.h; sourceTree = "<group>"; };
+		9ABBAC27EB203270134615D0 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9C5D1683F4632220161458A0 /* JSQMessagesAvatarImageFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesAvatarImageFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesAvatarImageFactory.m; sourceTree = "<group>"; };
+		9DC8D31FF69607E088566578 /* JSQMessagesAvatarImageFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesAvatarImageFactory.h; path = JSQMessagesViewController/Factories/JSQMessagesAvatarImageFactory.h; sourceTree = "<group>"; };
+		9E572E24E88A0A61D14C00E0 /* libPods-JSQSystemSoundPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSQSystemSoundPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27E2AC87CC26E27442703D8 /* JSQMessagesCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewCell.h; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCell.h; sourceTree = "<group>"; };
+		A428891323FEB163817156A0 /* JSQVideoMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQVideoMediaItem.h; path = JSQMessagesViewController/Model/JSQVideoMediaItem.h; sourceTree = "<group>"; };
+		A74F993F81C631F81205AD0B /* JSQMessagesInputToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesInputToolbar.m; path = JSQMessagesViewController/Views/JSQMessagesInputToolbar.m; sourceTree = "<group>"; };
+		AA2985BB93A622C572650A31 /* JSQMessagesKeyboardController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesKeyboardController.h; path = JSQMessagesViewController/Controllers/JSQMessagesKeyboardController.h; sourceTree = "<group>"; };
+		AC442FA63690E8880E8FB8E6 /* JSQMessagesToolbarButtonFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesToolbarButtonFactory.h; path = JSQMessagesViewController/Factories/JSQMessagesToolbarButtonFactory.h; sourceTree = "<group>"; };
+		AEAC018061578C5C435ADF1D /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewFlowLayoutInvalidationContext.m; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewFlowLayoutInvalidationContext.m; sourceTree = "<group>"; };
+		B0DA0F0A618E80A241AB43CE /* JSQMessagesCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewCell.m; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCell.m; sourceTree = "<group>"; };
+		B38B4BBC92F6A7F6FA8A3408 /* JSQMessagesCollectionViewCellOutgoing.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesCollectionViewCellOutgoing.xib; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellOutgoing.xib; sourceTree = "<group>"; };
+		B41B18FC57FB52F8D8743AF0 /* Pods-JSQMessagesViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSQMessagesViewController.xcconfig"; sourceTree = "<group>"; };
+		B6A7EB55F76078D7AE104B2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		B72B29A4A0E951F650B8DB41 /* Pods-JSQSystemSoundPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSQSystemSoundPlayer.xcconfig"; sourceTree = "<group>"; };
+		B831970A99010938584B3BCA /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		BA3F39A684A0CA6B34FACDB2 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewFlowLayoutInvalidationContext.h; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewFlowLayoutInvalidationContext.h; sourceTree = "<group>"; };
+		BB1BAA3AC9964C8B39248384 /* JSQMessagesCollectionViewCellOutgoing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewCellOutgoing.m; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellOutgoing.m; sourceTree = "<group>"; };
+		BC4CF21FE0173DC6B300A355 /* JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessages.h; path = JSQMessagesViewController/JSQMessages.h; sourceTree = "<group>"; };
+		BD3D09B2D8468A696D3FFC0D /* JSQVideoMediaItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQVideoMediaItem.m; path = JSQMessagesViewController/Model/JSQVideoMediaItem.m; sourceTree = "<group>"; };
+		BD6FBE22D7D085F1C71A26EB /* JSQMessagesTimestampFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesTimestampFormatter.h; path = JSQMessagesViewController/Factories/JSQMessagesTimestampFormatter.h; sourceTree = "<group>"; };
+		BE9C52D7C25482B68DF94F1B /* UIDevice+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+JSQMessages.h"; path = "JSQMessagesViewController/Categories/UIDevice+JSQMessages.h"; sourceTree = "<group>"; };
+		C71D6F96BE0FE7540E13268A /* JSQMessagesLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesLabel.h; path = JSQMessagesViewController/Views/JSQMessagesLabel.h; sourceTree = "<group>"; };
+		C75B6C7D32FE6ED89A67D255 /* JSQMessagesCellTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCellTextView.h; path = JSQMessagesViewController/Views/JSQMessagesCellTextView.h; sourceTree = "<group>"; };
+		CA5D8FA580C78C2FD0C631A3 /* JSQMessagesToolbarContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesToolbarContentView.h; path = JSQMessagesViewController/Views/JSQMessagesToolbarContentView.h; sourceTree = "<group>"; };
+		D3733019E7DFF2E539A23368 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		D3DB14588F3DDA5964093411 /* JSQMessagesToolbarContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesToolbarContentView.m; path = JSQMessagesViewController/Views/JSQMessagesToolbarContentView.m; sourceTree = "<group>"; };
+		D431D61F9B537952BCC46B45 /* JSQPhotoMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQPhotoMediaItem.h; path = JSQMessagesViewController/Model/JSQPhotoMediaItem.h; sourceTree = "<group>"; };
+		D9C980133BA86ABCAA012768 /* JSQMessagesTimestampFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesTimestampFormatter.m; path = JSQMessagesViewController/Factories/JSQMessagesTimestampFormatter.m; sourceTree = "<group>"; };
+		DAA84584DA7D6BBAE74ACBAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		DFBC3AEBA21B3B9001545DE1 /* JSQMessagesCollectionViewCellOutgoing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewCellOutgoing.h; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellOutgoing.h; sourceTree = "<group>"; };
+		E06AB3308C703FDC581EA2C0 /* JSQMessagesCollectionViewCellIncoming.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesCollectionViewCellIncoming.xib; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.xib; sourceTree = "<group>"; };
+		E0A4DD6099BB2610D6CA8553 /* JSQMessagesMediaPlaceholderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesMediaPlaceholderView.m; path = JSQMessagesViewController/Views/JSQMessagesMediaPlaceholderView.m; sourceTree = "<group>"; };
+		E725D16FC1E7979F0C04F6A2 /* JSQMessagesKeyboardController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesKeyboardController.m; path = JSQMessagesViewController/Controllers/JSQMessagesKeyboardController.m; sourceTree = "<group>"; };
+		E8C305AD9BEA283E7241EFA2 /* JSQMessagesInputToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesInputToolbar.h; path = JSQMessagesViewController/Views/JSQMessagesInputToolbar.h; sourceTree = "<group>"; };
+		EA56E48FE0A64495712A8901 /* UIColor+JSQMessages.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+JSQMessages.h"; path = "JSQMessagesViewController/Categories/UIColor+JSQMessages.h"; sourceTree = "<group>"; };
+		ECA3F69EA1D1F97DD0B8CB79 /* Pods-JSQSystemSoundPlayer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSQSystemSoundPlayer-Private.xcconfig"; sourceTree = "<group>"; };
+		ECAF127FF1EEE21B20E123DF /* JSQMessagesCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewFlowLayout.m; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		ED40CA140C54A006F5075A15 /* Pods-JSQMessagesViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSQMessagesViewController-Private.xcconfig"; sourceTree = "<group>"; };
+		ED582D313BDCA29423E3F313 /* JSQMessagesCollectionViewCellIncoming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewCellIncoming.h; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.h; sourceTree = "<group>"; };
+		EE1B3151489B1BD6CDD24B69 /* JSQMessagesLoadEarlierHeaderView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = JSQMessagesLoadEarlierHeaderView.xib; path = JSQMessagesViewController/Views/JSQMessagesLoadEarlierHeaderView.xib; sourceTree = "<group>"; };
+		EF12A288A3C57E02CAD69082 /* JSQSystemSoundPlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQSystemSoundPlayer.m; path = JSQSystemSoundPlayer/Classes/JSQSystemSoundPlayer.m; sourceTree = "<group>"; };
+		F31A81920BAC60B4F832BC2D /* JSQMessagesCollectionViewCellIncoming.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesCollectionViewCellIncoming.m; path = JSQMessagesViewController/Views/JSQMessagesCollectionViewCellIncoming.m; sourceTree = "<group>"; };
+		F58DA7403914950FE370621E /* JSQMessagesBubbleImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesBubbleImage.m; path = JSQMessagesViewController/Model/JSQMessagesBubbleImage.m; sourceTree = "<group>"; };
+		F848F3B35204E60DF2F9FE87 /* JSQMessagesAvatarImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesAvatarImage.m; path = JSQMessagesViewController/Model/JSQMessagesAvatarImage.m; sourceTree = "<group>"; };
+		F8C86D7342B2D62D543CDA2F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		FCAB01432AE3168E4566E79E /* JSQSystemSoundPlayer+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSQSystemSoundPlayer+JSQMessages.m"; path = "JSQMessagesViewController/Categories/JSQSystemSoundPlayer+JSQMessages.m"; sourceTree = "<group>"; };
+		FDA77DA0B489CB45B8286A2E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE886625CEFA9DBE67095E91 /* UIView+JSQMessages.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+JSQMessages.m"; path = "JSQMessagesViewController/Categories/UIView+JSQMessages.m"; sourceTree = "<group>"; };
+		FFEE3C62BF67CF978CAC47E8 /* JSQMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessage.h; path = JSQMessagesViewController/Model/JSQMessage.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F7766BD90F72EE85E78521F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B6B7F0E26F6D45D944494A /* CoreGraphics.framework in Frameworks */,
+				723BF7B3AB718F78C5D73681 /* CoreLocation.framework in Frameworks */,
+				F24AB933F2E008813C3B946B /* Foundation.framework in Frameworks */,
+				F7DBC9EC8FEE25B2668EBA74 /* MapKit.framework in Frameworks */,
+				C0164537A69D4BFA2F56F541 /* QuartzCore.framework in Frameworks */,
+				3DD61830915B4962A06F00D2 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B684568AA05D6ADB92DA46A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438EA62E8DB5597A00B41ECE /* AudioToolbox.framework in Frameworks */,
+				25AEBC35FA132DBECB557726 /* Foundation.framework in Frameworks */,
+				37C4F3E1FA29B0D22F97D911 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0686A9AC9A8605C3745ED05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B661E6BA95EE466CA5D11DA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04059A308C56E21817B243DA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B41B18FC57FB52F8D8743AF0 /* Pods-JSQMessagesViewController.xcconfig */,
+				ED40CA140C54A006F5075A15 /* Pods-JSQMessagesViewController-Private.xcconfig */,
+				46D643E009D16BC4C21061CE /* Pods-JSQMessagesViewController-dummy.m */,
+				1E87C899798884472771BA55 /* Pods-JSQMessagesViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-JSQMessagesViewController";
+			sourceTree = "<group>";
+		};
+		3A236246D158C9C04D302898 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0126EFD0065E6DD6E2EFEFEF /* JSQMessagesAssets.bundle */,
+				E06AB3308C703FDC581EA2C0 /* JSQMessagesCollectionViewCellIncoming.xib */,
+				B38B4BBC92F6A7F6FA8A3408 /* JSQMessagesCollectionViewCellOutgoing.xib */,
+				EE1B3151489B1BD6CDD24B69 /* JSQMessagesLoadEarlierHeaderView.xib */,
+				8FDBFE6C5703620D29C54ABA /* JSQMessagesToolbarContentView.xib */,
+				8363F17E1AC065F4007931BD /* ok.jpg */,
+				3A826519487F04457A202A49 /* JSQMessagesTypingIndicatorFooterView.xib */,
+				6FB72ADBECF4751BDBE89B58 /* JSQMessagesViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		428315F42DC9307AC9169429 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDA77DA0B489CB45B8286A2E /* libPods.a */,
+				7B36196096FA8A69CBBAE56D /* libPods-JSQMessagesViewController.a */,
+				9E572E24E88A0A61D14C00E0 /* libPods-JSQSystemSoundPlayer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54A3B3837329C3083278A11E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B72B29A4A0E951F650B8DB41 /* Pods-JSQSystemSoundPlayer.xcconfig */,
+				ECA3F69EA1D1F97DD0B8CB79 /* Pods-JSQSystemSoundPlayer-Private.xcconfig */,
+				0DB7C2AD4D3CFF094657103A /* Pods-JSQSystemSoundPlayer-dummy.m */,
+				1F2263DB0AAF99709E2FD874 /* Pods-JSQSystemSoundPlayer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-JSQSystemSoundPlayer";
+			sourceTree = "<group>";
+		};
+		6463E9CFB51557340C3973F1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8B90836DBDF5F5A6126EE704 /* AudioToolbox.framework */,
+				6961EB119ED738D3D44AFFF0 /* CoreGraphics.framework */,
+				233DD1C64078CA431925BC3E /* CoreLocation.framework */,
+				4F58432DDB4EB80C07A44B61 /* Foundation.framework */,
+				F8C86D7342B2D62D543CDA2F /* MapKit.framework */,
+				DAA84584DA7D6BBAE74ACBAC /* QuartzCore.framework */,
+				97FE901B66BDC5FB8A5DFE85 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6A21370AB8A2EF30D20331D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6463E9CFB51557340C3973F1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EA3B3BC9EBD240F3D364003 /* JSQMessagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21A2ACA98C13085BB315D55D /* JSQLocationMediaItem.h */,
+				4DFBA91A4821E5CD2C877F95 /* JSQLocationMediaItem.m */,
+				96E28F6E2182CBB472FE3A0A /* JSQMediaItem.h */,
+				710F0E570254654167F562DC /* JSQMediaItem.m */,
+				FFEE3C62BF67CF978CAC47E8 /* JSQMessage.h */,
+				06BA6A1093DEEB7058CCFDCF /* JSQMessage.m */,
+				526A51EC5AAAAF02B3CC536B /* JSQMessageAvatarImageDataSource.h */,
+				8D37E2D871B3C03E59767CAB /* JSQMessageBubbleImageDataSource.h */,
+				0CC5A443EB929218AABEA226 /* JSQMessageData.h */,
+				266E3C1B8A09EC5052A52425 /* JSQMessageMediaData.h */,
+				BC4CF21FE0173DC6B300A355 /* JSQMessages.h */,
+				3F5F94054BA0535E2AE14263 /* JSQMessagesAvatarImage.h */,
+				F848F3B35204E60DF2F9FE87 /* JSQMessagesAvatarImage.m */,
+				9DC8D31FF69607E088566578 /* JSQMessagesAvatarImageFactory.h */,
+				9C5D1683F4632220161458A0 /* JSQMessagesAvatarImageFactory.m */,
+				1095EBF2CA32AB22F395B1CA /* JSQMessagesBubbleImage.h */,
+				F58DA7403914950FE370621E /* JSQMessagesBubbleImage.m */,
+				86394F06BD573F145A119B43 /* JSQMessagesBubbleImageFactory.h */,
+				703C68C71B5E99FFE1E3B310 /* JSQMessagesBubbleImageFactory.m */,
+				C75B6C7D32FE6ED89A67D255 /* JSQMessagesCellTextView.h */,
+				176191D2FC16E90A7CFFF9E6 /* JSQMessagesCellTextView.m */,
+				16A0E1B3A5CFC405F37596AF /* JSQMessagesCollectionView.h */,
+				05F62E076631C7C1BFBAE78F /* JSQMessagesCollectionView.m */,
+				A27E2AC87CC26E27442703D8 /* JSQMessagesCollectionViewCell.h */,
+				B0DA0F0A618E80A241AB43CE /* JSQMessagesCollectionViewCell.m */,
+				ED582D313BDCA29423E3F313 /* JSQMessagesCollectionViewCellIncoming.h */,
+				F31A81920BAC60B4F832BC2D /* JSQMessagesCollectionViewCellIncoming.m */,
+				DFBC3AEBA21B3B9001545DE1 /* JSQMessagesCollectionViewCellOutgoing.h */,
+				BB1BAA3AC9964C8B39248384 /* JSQMessagesCollectionViewCellOutgoing.m */,
+				1A3553E67C5361B9E1CF7E42 /* JSQMessagesCollectionViewDataSource.h */,
+				68A0867DCD65F1F06E3CA01A /* JSQMessagesCollectionViewDelegateFlowLayout.h */,
+				040725B521D12B23258D2245 /* JSQMessagesCollectionViewFlowLayout.h */,
+				ECAF127FF1EEE21B20E123DF /* JSQMessagesCollectionViewFlowLayout.m */,
+				BA3F39A684A0CA6B34FACDB2 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h */,
+				AEAC018061578C5C435ADF1D /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m */,
+				12C99268BE428FD633AC6504 /* JSQMessagesCollectionViewLayoutAttributes.h */,
+				24BA91801EA9D255E470B796 /* JSQMessagesCollectionViewLayoutAttributes.m */,
+				2396E82F0E4EDDF7158A85D8 /* JSQMessagesComposerTextView.h */,
+				3B6B2313F5E790EC63582494 /* JSQMessagesComposerTextView.m */,
+				E8C305AD9BEA283E7241EFA2 /* JSQMessagesInputToolbar.h */,
+				A74F993F81C631F81205AD0B /* JSQMessagesInputToolbar.m */,
+				AA2985BB93A622C572650A31 /* JSQMessagesKeyboardController.h */,
+				E725D16FC1E7979F0C04F6A2 /* JSQMessagesKeyboardController.m */,
+				C71D6F96BE0FE7540E13268A /* JSQMessagesLabel.h */,
+				75E9C6FA462967B88D46F970 /* JSQMessagesLabel.m */,
+				08E486F17B35FC35B1B5430A /* JSQMessagesLoadEarlierHeaderView.h */,
+				17886B51B66DC009235E529B /* JSQMessagesLoadEarlierHeaderView.m */,
+				35904472EA7E39E99F14C77D /* JSQMessagesMediaPlaceholderView.h */,
+				E0A4DD6099BB2610D6CA8553 /* JSQMessagesMediaPlaceholderView.m */,
+				000104C67BA486045990AA8E /* JSQMessagesMediaViewBubbleImageMasker.h */,
+				510DD8985BE60D4B162C9B92 /* JSQMessagesMediaViewBubbleImageMasker.m */,
+				BD6FBE22D7D085F1C71A26EB /* JSQMessagesTimestampFormatter.h */,
+				D9C980133BA86ABCAA012768 /* JSQMessagesTimestampFormatter.m */,
+				AC442FA63690E8880E8FB8E6 /* JSQMessagesToolbarButtonFactory.h */,
+				0149F41170EA91F82EDFC536 /* JSQMessagesToolbarButtonFactory.m */,
+				CA5D8FA580C78C2FD0C631A3 /* JSQMessagesToolbarContentView.h */,
+				D3DB14588F3DDA5964093411 /* JSQMessagesToolbarContentView.m */,
+				9A76C9D4A1B369D53B0985AD /* JSQMessagesTypingIndicatorFooterView.h */,
+				1D2D48030895AD43A52AFE10 /* JSQMessagesTypingIndicatorFooterView.m */,
+				786BE794666297D05D61CE4D /* JSQMessagesViewController.h */,
+				839BB6C554BED432E1E2EEAC /* JSQMessagesViewController.m */,
+				D431D61F9B537952BCC46B45 /* JSQPhotoMediaItem.h */,
+				76E4E907E7C7BEF458B8B30D /* JSQPhotoMediaItem.m */,
+				31984969446D8F1C05F9E895 /* JSQSystemSoundPlayer+JSQMessages.h */,
+				FCAB01432AE3168E4566E79E /* JSQSystemSoundPlayer+JSQMessages.m */,
+				A428891323FEB163817156A0 /* JSQVideoMediaItem.h */,
+				BD3D09B2D8468A696D3FFC0D /* JSQVideoMediaItem.m */,
+				2BCDB1AB3ABDDF7DAFB07D60 /* NSBundle+JSQMessages.h */,
+				616B56526CF88292988E1A84 /* NSBundle+JSQMessages.m */,
+				4BA3BFD2B3AEEFD6E2160580 /* NSString+JSQMessages.h */,
+				725CAB20E15E49C603C3E7DC /* NSString+JSQMessages.m */,
+				EA56E48FE0A64495712A8901 /* UIColor+JSQMessages.h */,
+				1799276D6EEF2441633345C1 /* UIColor+JSQMessages.m */,
+				BE9C52D7C25482B68DF94F1B /* UIDevice+JSQMessages.h */,
+				735B1F91978B9F42C07295E4 /* UIDevice+JSQMessages.m */,
+				93093AB44FB82BBA3A85164B /* UIImage+JSQMessages.h */,
+				0AFE9FCDCBE7B5AB48C7B74B /* UIImage+JSQMessages.m */,
+				781BD8D493F1A3A46CC40B58 /* UIView+JSQMessages.h */,
+				FE886625CEFA9DBE67095E91 /* UIView+JSQMessages.m */,
+				3A236246D158C9C04D302898 /* Resources */,
+				04059A308C56E21817B243DA /* Support Files */,
+			);
+			path = JSQMessagesViewController;
+			sourceTree = "<group>";
+		};
+		8A7E4BEBB4B3CADA5BCEE782 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EA3B3BC9EBD240F3D364003 /* JSQMessagesViewController */,
+				E9982E288E2C6131E19069E6 /* JSQSystemSoundPlayer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C254259B3C46C3D5D2008FAD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE34640697081D9B902473ED /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CEBB97AA059DAEC0E3172A84 = {
+			isa = PBXGroup;
+			children = (
+				6A9C744A8942998C54305C4F /* Podfile */,
+				6A21370AB8A2EF30D20331D7 /* Frameworks */,
+				8A7E4BEBB4B3CADA5BCEE782 /* Pods */,
+				428315F42DC9307AC9169429 /* Products */,
+				C254259B3C46C3D5D2008FAD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DE34640697081D9B902473ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9ABBAC27EB203270134615D0 /* Pods-acknowledgements.markdown */,
+				6C6462C11547448C5AF323D4 /* Pods-acknowledgements.plist */,
+				4271444602F25B2ACDB36DD0 /* Pods-dummy.m */,
+				B831970A99010938584B3BCA /* Pods-environment.h */,
+				99A5EA59299805F5DD5B3C8D /* Pods-resources.sh */,
+				B6A7EB55F76078D7AE104B2B /* Pods.debug.xcconfig */,
+				D3733019E7DFF2E539A23368 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		E9982E288E2C6131E19069E6 /* JSQSystemSoundPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				231C539D507C7764705E1B6D /* JSQSystemSoundPlayer.h */,
+				EF12A288A3C57E02CAD69082 /* JSQSystemSoundPlayer.m */,
+				54A3B3837329C3083278A11E /* Support Files */,
+			);
+			path = JSQSystemSoundPlayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		77AD49E2A131270DB5877C20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D378700EAFC22F08A00724F8 /* JSQLocationMediaItem.h in Headers */,
+				240615D90A6BF163AD6066EF /* JSQMediaItem.h in Headers */,
+				A73AECB6EB013995AE8CE626 /* JSQMessage.h in Headers */,
+				AF732DCD0C6F42D9A67156CD /* JSQMessageAvatarImageDataSource.h in Headers */,
+				86C02D030D6F420827023B86 /* JSQMessageBubbleImageDataSource.h in Headers */,
+				A0C97085F57BE6443F53DC0F /* JSQMessageData.h in Headers */,
+				BF05A06D0DD2098E9F898E0B /* JSQMessageMediaData.h in Headers */,
+				96F28A097C37927E00B32AC8 /* JSQMessages.h in Headers */,
+				50049520F87DB60AC53753A4 /* JSQMessagesAvatarImage.h in Headers */,
+				8CBF6BB66F161A435DECEEE1 /* JSQMessagesAvatarImageFactory.h in Headers */,
+				106039622A3E9E9D321E6878 /* JSQMessagesBubbleImage.h in Headers */,
+				DDB3FE2A89BDFF9FB8347C61 /* JSQMessagesBubbleImageFactory.h in Headers */,
+				AE4B886C7ED5E5E94F95DBC0 /* JSQMessagesCellTextView.h in Headers */,
+				890F37C870D76C17E15DEF49 /* JSQMessagesCollectionView.h in Headers */,
+				B25CFC45FB5151619B9F403E /* JSQMessagesCollectionViewCell.h in Headers */,
+				0B424491F89711F7162F7D90 /* JSQMessagesCollectionViewCellIncoming.h in Headers */,
+				37694E9BDD97CEF66F49DAEE /* JSQMessagesCollectionViewCellOutgoing.h in Headers */,
+				7F42DFBEA577057EC06C6C6E /* JSQMessagesCollectionViewDataSource.h in Headers */,
+				729839EE047AEC20AF1EA86E /* JSQMessagesCollectionViewDelegateFlowLayout.h in Headers */,
+				9DCE03A71C67A630DAFBAD00 /* JSQMessagesCollectionViewFlowLayout.h in Headers */,
+				960A18D4CDE8B392B63EB5A5 /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.h in Headers */,
+				A559D2DAEE6212C2A1B3163E /* JSQMessagesCollectionViewLayoutAttributes.h in Headers */,
+				DB559C7F92539C361653E6C1 /* JSQMessagesComposerTextView.h in Headers */,
+				C03F5EC825C9753A1643C95F /* JSQMessagesInputToolbar.h in Headers */,
+				987A75ED81A817C6D0EFB9FE /* JSQMessagesKeyboardController.h in Headers */,
+				356FE7C7C047466D5C4799A0 /* JSQMessagesLabel.h in Headers */,
+				C3D7F90D0A8AE31ED393ABAF /* JSQMessagesLoadEarlierHeaderView.h in Headers */,
+				B60EC69F7FCAB0B0D251F87D /* JSQMessagesMediaPlaceholderView.h in Headers */,
+				72F0CB5636B813C214C19611 /* JSQMessagesMediaViewBubbleImageMasker.h in Headers */,
+				59353E4E94CD3E97CC08F7AA /* JSQMessagesTimestampFormatter.h in Headers */,
+				E424A81F6BEF77263B50A1CE /* JSQMessagesToolbarButtonFactory.h in Headers */,
+				738FF0D617D54CE645597775 /* JSQMessagesToolbarContentView.h in Headers */,
+				97C5FA7800A7B2B7C7E2A941 /* JSQMessagesTypingIndicatorFooterView.h in Headers */,
+				94FF522315F06AE5A1F7832D /* JSQMessagesViewController.h in Headers */,
+				C8F8A5DD71A08B4C6181EA05 /* JSQPhotoMediaItem.h in Headers */,
+				6009C67E5AF065712CE1370D /* JSQSystemSoundPlayer+JSQMessages.h in Headers */,
+				EB6CFF8A795FE178A54FA73E /* JSQVideoMediaItem.h in Headers */,
+				12822F0C35AF81C060F88D3B /* NSBundle+JSQMessages.h in Headers */,
+				0387B5B0BE7E742CA4461E0A /* NSString+JSQMessages.h in Headers */,
+				070CA1FA109660510A2028A3 /* UIColor+JSQMessages.h in Headers */,
+				A051B29ED47B3AD9A24305BD /* UIDevice+JSQMessages.h in Headers */,
+				3A7B951D6E27A0C0BE6340A0 /* UIImage+JSQMessages.h in Headers */,
+				8512001FCCE65A8648388A6C /* UIView+JSQMessages.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D76E0BD0CC5AAA93FF8E12C3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDD2F042248C40E9FD6DA3C /* JSQSystemSoundPlayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0656D8316E8141CD14663A46 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50FE27E9B59862C83BEB3384 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				2DDD529ADB77AAD0676D9073 /* Sources */,
+				F0686A9AC9A8605C3745ED05 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3810171BE66119322E5F537 /* PBXTargetDependency */,
+				49C40C866E5D6CC151D025FC /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = FDA77DA0B489CB45B8286A2E /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		69DBDD1A0693D770CC52FFA4 /* Pods-JSQSystemSoundPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF6B4A2B7B522F876975DE50 /* Build configuration list for PBXNativeTarget "Pods-JSQSystemSoundPlayer" */;
+			buildPhases = (
+				6556E7A5B76F952FD4939DF3 /* Sources */,
+				B684568AA05D6ADB92DA46A1 /* Frameworks */,
+				D76E0BD0CC5AAA93FF8E12C3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JSQSystemSoundPlayer";
+			productName = "Pods-JSQSystemSoundPlayer";
+			productReference = 9E572E24E88A0A61D14C00E0 /* libPods-JSQSystemSoundPlayer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E29760E3423356F74A82CF96 /* Pods-JSQMessagesViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5C443F89C9265445069D8F6 /* Build configuration list for PBXNativeTarget "Pods-JSQMessagesViewController" */;
+			buildPhases = (
+				EFA79880C76D1DAB867E860C /* Sources */,
+				9F7766BD90F72EE85E78521F /* Frameworks */,
+				77AD49E2A131270DB5877C20 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8F49E1834108334DBBE1797 /* PBXTargetDependency */,
+			);
+			name = "Pods-JSQMessagesViewController";
+			productName = "Pods-JSQMessagesViewController";
+			productReference = 7B36196096FA8A69CBBAE56D /* libPods-JSQMessagesViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E57DD73A5746823877F7DB70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 6C78CEE58DF6855AD80019AF /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEBB97AA059DAEC0E3172A84;
+			productRefGroup = 428315F42DC9307AC9169429 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0656D8316E8141CD14663A46 /* Pods */,
+				E29760E3423356F74A82CF96 /* Pods-JSQMessagesViewController */,
+				69DBDD1A0693D770CC52FFA4 /* Pods-JSQSystemSoundPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DDD529ADB77AAD0676D9073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C9B8CD985FFB87F872B40B9 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6556E7A5B76F952FD4939DF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FB46F70C507F3E8CA931AA /* JSQSystemSoundPlayer.m in Sources */,
+				00CE95FD66D987046EC825A0 /* Pods-JSQSystemSoundPlayer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA79880C76D1DAB867E860C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7294ED93EA0C6BAD58315BF /* JSQLocationMediaItem.m in Sources */,
+				ACB6BD4B7B77A1AD0C2D5734 /* JSQMediaItem.m in Sources */,
+				78BDF6FD878B65FF92B8DBEA /* JSQMessage.m in Sources */,
+				AEFD9F1C68F879F702154574 /* JSQMessagesAvatarImage.m in Sources */,
+				1FB991439B3AA83AC53A1609 /* JSQMessagesAvatarImageFactory.m in Sources */,
+				757BAE07DAC4785DB971F5C7 /* JSQMessagesBubbleImage.m in Sources */,
+				A804649D3CA02054640F6E13 /* JSQMessagesBubbleImageFactory.m in Sources */,
+				C5F2A0AFDEF86BEBA514643C /* JSQMessagesCellTextView.m in Sources */,
+				F22DEAA43A29A8BFD34682BD /* JSQMessagesCollectionView.m in Sources */,
+				6811E59ED8156C2A2202EA36 /* JSQMessagesCollectionViewCell.m in Sources */,
+				62CD7BDEC249B44E117DAF75 /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
+				55C91F6A7B4E0BE0760F25E2 /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
+				426630A061AB1BC0250DEECB /* JSQMessagesCollectionViewFlowLayout.m in Sources */,
+				A4EF7B02A21CACC4FA58852F /* JSQMessagesCollectionViewFlowLayoutInvalidationContext.m in Sources */,
+				D62EBF757A88F770168C2E7A /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
+				16DA71E53B41C43732AF2DD4 /* JSQMessagesComposerTextView.m in Sources */,
+				A1FC7EAED1FBE37A8CED18F0 /* JSQMessagesInputToolbar.m in Sources */,
+				355BBF0DC62673FEEF85647A /* JSQMessagesKeyboardController.m in Sources */,
+				065284061441E937F6065A40 /* JSQMessagesLabel.m in Sources */,
+				008DE1735D57D69FF734A10F /* JSQMessagesLoadEarlierHeaderView.m in Sources */,
+				428E8349CDEB880A5F603DC8 /* JSQMessagesMediaPlaceholderView.m in Sources */,
+				7B288DD1A79584E874107641 /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,
+				C162FEDC234D2ECED45C0E6D /* JSQMessagesTimestampFormatter.m in Sources */,
+				A1A50B62DFE7EBBC7529A734 /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				C03805950BB03F9DD9CB8729 /* JSQMessagesToolbarContentView.m in Sources */,
+				89670A21DAA5B467868F3D2D /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
+				C942B65389EA3A66C882435C /* JSQMessagesViewController.m in Sources */,
+				680B33B36169A56CE7E6424B /* JSQPhotoMediaItem.m in Sources */,
+				AAD7CCB9A9D598522F2A82DC /* JSQSystemSoundPlayer+JSQMessages.m in Sources */,
+				3969BB8DC65D9BCDFBE3F034 /* JSQVideoMediaItem.m in Sources */,
+				50CFB5A412935E68DFAE94F6 /* NSBundle+JSQMessages.m in Sources */,
+				116F539558D59C2F3C9DFCA2 /* NSString+JSQMessages.m in Sources */,
+				261A41BFD2A7B2241F74383A /* Pods-JSQMessagesViewController-dummy.m in Sources */,
+				A86D382A6C57A0C0D1A80635 /* UIColor+JSQMessages.m in Sources */,
+				6B497E8D53B344E64BA2CD4B /* UIDevice+JSQMessages.m in Sources */,
+				B2DF738B7857DD6C87457BEF /* UIImage+JSQMessages.m in Sources */,
+				80A802DB37B0399D42E01A19 /* UIView+JSQMessages.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49C40C866E5D6CC151D025FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JSQSystemSoundPlayer";
+			target = 69DBDD1A0693D770CC52FFA4 /* Pods-JSQSystemSoundPlayer */;
+			targetProxy = 6BF3D127C7DCE3D62B87209F /* PBXContainerItemProxy */;
+		};
+		B3810171BE66119322E5F537 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JSQMessagesViewController";
+			target = E29760E3423356F74A82CF96 /* Pods-JSQMessagesViewController */;
+			targetProxy = 9003576F3DB2D5720E897F4F /* PBXContainerItemProxy */;
+		};
+		B8F49E1834108334DBBE1797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JSQSystemSoundPlayer";
+			target = 69DBDD1A0693D770CC52FFA4 /* Pods-JSQSystemSoundPlayer */;
+			targetProxy = 8228C9C5406D247FEDE88142 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6CBBAC0F6924D8D079253E44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94653B4B8ABC68F8A7108E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED40CA140C54A006F5075A15 /* Pods-JSQMessagesViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSQMessagesViewController/Pods-JSQMessagesViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A426A5B2F7F37F7C31092130 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA3F69EA1D1F97DD0B8CB79 /* Pods-JSQSystemSoundPlayer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSQSystemSoundPlayer/Pods-JSQSystemSoundPlayer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ACCAEE2352C57CBAD9A068AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A7EB55F76078D7AE104B2B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C351D4C8D5044625A504AD6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3733019E7DFF2E539A23368 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C39D00E3D50E97E2497797E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECA3F69EA1D1F97DD0B8CB79 /* Pods-JSQSystemSoundPlayer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSQSystemSoundPlayer/Pods-JSQSystemSoundPlayer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB40CF8EE1D9C4606BF82B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FB4AF8449D53A92072DFA246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED40CA140C54A006F5075A15 /* Pods-JSQMessagesViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSQMessagesViewController/Pods-JSQMessagesViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50FE27E9B59862C83BEB3384 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACCAEE2352C57CBAD9A068AE /* Debug */,
+				C351D4C8D5044625A504AD6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C78CEE58DF6855AD80019AF /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB40CF8EE1D9C4606BF82B75 /* Debug */,
+				6CBBAC0F6924D8D079253E44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5C443F89C9265445069D8F6 /* Build configuration list for PBXNativeTarget "Pods-JSQMessagesViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94653B4B8ABC68F8A7108E17 /* Debug */,
+				FB4AF8449D53A92072DFA246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF6B4A2B7B522F876975DE50 /* Build configuration list for PBXNativeTarget "Pods-JSQSystemSoundPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A426A5B2F7F37F7C31092130 /* Debug */,
+				C39D00E3D50E97E2497797E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E57DD73A5746823877F7DB70 /* Project object */;
+}
