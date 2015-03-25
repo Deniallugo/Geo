@@ -4,12 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GRMustache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-JRSwizzle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Mapbox-iOS-SDK-Mapbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Mapbox-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SMCalloutView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0656D8316E8141CD14663A46</key>
+		<key>1D9C2428DA67879F567DBF5D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69DBDD1A0693D770CC52FFA4</key>
+		<key>31AA59163A313CA9F7CF9077</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E29760E3423356F74A82CF96</key>
+		<key>322A5F2B2FB1338FED3FA232</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39CB366672032A81E38D3A86</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51CBA7A39D2568293438D3BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>561B0817F6DC9ED81D1259FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CF527D077F05F5B32FBA5AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AAD4A069FE94BE5945816AD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC1625EFF12A8537CA06C818</key>
 		<dict>
 			<key>primary</key>
 			<true/>

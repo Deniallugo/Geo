@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SMLoginView.h"
 #import "TURNSocket.h"
-
+#import "MapBoxViewController.h"
 
 @implementation SMChatViewController{
 
@@ -18,7 +18,7 @@
 
 }
 
-@synthesize  chatWithUser, GeoLength,GeoLtitude;
+@synthesize  chatWithUser, GeoLongtitude,GeoLatitude;
 
 
 
@@ -78,8 +78,8 @@
     }
     [self->locationManager startUpdatingLocation];
 
-    GeoLtitude = [NSString stringWithFormat:@"%.8f", 43.0288];
-    GeoLength = [NSString stringWithFormat:@"%.8f", 131.9013];
+    GeoLatitude = [NSString stringWithFormat:@"%.8f", 43.0288];
+    GeoLongtitude = [NSString stringWithFormat:@"%.8f", 131.9013];
 
     //    [NSTimer scheduledTimerWithTimeInterval:3
     //                                     target:self
@@ -127,8 +127,8 @@
     CLLocation *currentLocation = newLocation;
 
     if (currentLocation != nil) {
-        GeoLtitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        GeoLength = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        GeoLatitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        GeoLongtitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     }
 
     if (firstUpdateLocation){
@@ -202,8 +202,11 @@
 -(void) goToWebMap{
 
 
-    WebViewController * webView = [self.storyboard instantiateViewControllerWithIdentifier:@"web"];
-    [self.navigationController pushViewController:webView animated:YES ];
+    MapBoxViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+
+    mapView.latitude = [GeoLatitude floatValue];
+    mapView.longtitude = [GeoLongtitude floatValue];
+    [self.navigationController pushViewController:mapView animated:YES ];
 }
 
 
@@ -305,8 +308,8 @@
     [message addAttributeWithName:@"type"stringValue:@"chat"];
 
     [message addAttributeWithName:@"to"stringValue:nil];
-    [message addAttributeWithName:@"latitude" stringValue:GeoLtitude];
-    [message addAttributeWithName:@"length" stringValue:GeoLength];
+    [message addAttributeWithName:@"latitude" stringValue:GeoLatitude];
+    [message addAttributeWithName:@"length" stringValue:GeoLongtitude];
 
 
     [message addChild:body];
@@ -366,8 +369,8 @@
 
     [message addAttributeWithName:@"id" intValue:identifier];
 
-    NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLtitude];
-    NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLength];
+    NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
+    NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
     NSXMLElement * request = [NSXMLElement elementWithName:@"request" stringValue:@"urn:xmpp:receipts"];
 
     [geo addChild:latitude];
@@ -398,8 +401,8 @@
 -(void) sendQuery{
     XMPPIQ *iq = [[XMPPIQ alloc] initWithType:@"get"];
     DDXMLElement *query = [DDXMLElement elementWithName:@"query" xmlns:@"geo:list:messages"];
-    NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLtitude];
-    NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLength];
+    NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
+    NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
     NSXMLElement * radius = [NSXMLElement elementWithName:@"radius" stringValue:[NSString stringWithFormat:@"%.20lf", Radius ] ];
     NSXMLElement * number = [NSXMLElement elementWithName:@"number" stringValue:@"30"];
 
@@ -808,4 +811,20 @@
     NSLog(@"Tapped cell at %@!", NSStringFromCGPoint(touchLocation));
 }
 
+
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"map"])
+    {
+        MapBoxViewController *vc = [segue destinationViewController];
+
+        vc.latitude = [GeoLatitude floatValue];
+        vc.longtitude = [GeoLongtitude floatValue];
+    }
+    else
+    {
+        [super prepareForSegue:segue sender:sender];
+    }
+}
 @end

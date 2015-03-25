@@ -156,9 +156,9 @@
 		8315ABF01ABDC54D004612C2 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315AB5F1ABDC54D004612C2 /* DDXMLNode.m */; };
 		8315ABF11ABDC54D004612C2 /* build-libidn.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8315AB631ABDC54D004612C2 /* build-libidn.sh */; };
 		8315ABF21ABDC54D004612C2 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8315AB651ABDC54D004612C2 /* libidn.a */; };
+		8336E5D91AC2738C00832F42 /* MapBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8336E5D81AC2738C00832F42 /* MapBoxViewController.m */; };
 		833C1E271ABDEA8A00535901 /* RadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C1E261ABDEA8A00535901 /* RadiusViewController.m */; };
 		833C1E2A1ABE45F600535901 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C1E291ABE45F600535901 /* WebViewController.m */; };
-		8363F1801AC06DF9007931BD /* ok.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8363F17F1AC06DF9007931BD /* ok.jpg */; };
 		83B0CB5A1ABDD23400EC64D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B0CB591ABDD23400EC64D2 /* Main.storyboard */; };
 		83E8CBF81ABDC1FC00C02B0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E8CBF71ABDC1FC00C02B0D /* Images.xcassets */; };
 		83E8CBFB1ABDC1FC00C02B0D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E8CBF91ABDC1FC00C02B0D /* LaunchScreen.xib */; };
@@ -495,11 +495,12 @@
 		8315AB651ABDC54D004612C2 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libidn.a; sourceTree = "<group>"; };
 		8315AB661ABDC54D004612C2 /* stringprep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringprep.h; sourceTree = "<group>"; };
 		8315ABF31ABDC579004612C2 /* XMPPFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
+		8336E5D71AC2738C00832F42 /* MapBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxViewController.h; sourceTree = "<group>"; };
+		8336E5D81AC2738C00832F42 /* MapBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxViewController.m; sourceTree = "<group>"; };
 		833C1E251ABDEA8A00535901 /* RadiusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiusViewController.h; sourceTree = "<group>"; };
 		833C1E261ABDEA8A00535901 /* RadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiusViewController.m; sourceTree = "<group>"; };
 		833C1E281ABE45F600535901 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		833C1E291ABE45F600535901 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		8363F17F1AC06DF9007931BD /* ok.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ok.jpg; sourceTree = "<group>"; };
 		83B0CB591ABDD23400EC64D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		83E8CBE71ABDC1FB00C02B0D /* Geo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E8CBEB1ABDC1FB00C02B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1413,7 +1414,7 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
-		83E8CBDE1ABDC1FB00C02B0D = {
+		8336E5DA1AC2870B00832F42 /* XMPP */ = {
 			isa = PBXGroup;
 			children = (
 				8315ABF31ABDC579004612C2 /* XMPPFramework.h */,
@@ -1423,6 +1424,14 @@
 				8315AA301ABDC54D004612C2 /* Extensions */,
 				8315AB2E1ABDC54D004612C2 /* Utilities */,
 				8315AB3D1ABDC54D004612C2 /* Vendor */,
+			);
+			name = XMPP;
+			sourceTree = "<group>";
+		};
+		83E8CBDE1ABDC1FB00C02B0D = {
+			isa = PBXGroup;
+			children = (
+				8336E5DA1AC2870B00832F42 /* XMPP */,
 				83E8CBE91ABDC1FB00C02B0D /* Geo */,
 				83E8CC031ABDC1FC00C02B0D /* GeoTests */,
 				83E8CBE81ABDC1FB00C02B0D /* Products */,
@@ -1448,7 +1457,6 @@
 				8315A9DC1ABDC52A004612C2 /* DemoModelData.h */,
 				8315A9DD1ABDC52A004612C2 /* DemoModelData.m */,
 				8315A9DE1ABDC52A004612C2 /* Info.plist */,
-				8315A9DF1ABDC52A004612C2 /* main.m */,
 				8315A9E21ABDC52A004612C2 /* NSUserDefaults+DemoSettings.h */,
 				8315A9E31ABDC52A004612C2 /* NSUserDefaults+DemoSettings.m */,
 				8315A9E41ABDC52A004612C2 /* SMChatDelegatE.h */,
@@ -1465,9 +1473,10 @@
 				83E8CBEA1ABDC1FB00C02B0D /* Supporting Files */,
 				833C1E251ABDEA8A00535901 /* RadiusViewController.h */,
 				833C1E261ABDEA8A00535901 /* RadiusViewController.m */,
-				8363F17F1AC06DF9007931BD /* ok.jpg */,
 				833C1E281ABE45F600535901 /* WebViewController.h */,
 				833C1E291ABE45F600535901 /* WebViewController.m */,
+				8336E5D71AC2738C00832F42 /* MapBoxViewController.h */,
+				8336E5D81AC2738C00832F42 /* MapBoxViewController.m */,
 			);
 			path = Geo;
 			sourceTree = "<group>";
@@ -1475,6 +1484,7 @@
 		83E8CBEA1ABDC1FB00C02B0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8315A9DF1ABDC52A004612C2 /* main.m */,
 				83E8CBEB1ABDC1FB00C02B0D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1588,7 +1598,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8363F1801AC06DF9007931BD /* ok.jpg in Resources */,
 				83B0CB5A1ABDD23400EC64D2 /* Main.storyboard in Resources */,
 				8315A9F21ABDC52A004612C2 /* Info.plist in Resources */,
 				8315ABF11ABDC54D004612C2 /* build-libidn.sh in Resources */,
@@ -1651,6 +1660,7 @@
 				8315ABA91ABDC54D004612C2 /* XMPPvCardTempEmail.m in Sources */,
 				8315AB721ABDC54D004612C2 /* XMPPElement.m in Sources */,
 				8315AB891ABDC54D004612C2 /* XMPPUserMemoryStorageObject.m in Sources */,
+				8336E5D91AC2738C00832F42 /* MapBoxViewController.m in Sources */,
 				8315AB7C1ABDC54D004612C2 /* XMPPFileTransfer.m in Sources */,
 				8315ABC01ABDC54D004612C2 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				8315ABE21ABDC54D004612C2 /* XMPPTimer.m in Sources */,

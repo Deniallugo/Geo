@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lac-CX-wK8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hqo-64-R16">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View-->
@@ -50,6 +48,9 @@
                                 <state key="normal" title="Регистрация">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="254" y="499" width="92" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="registration" destination="Piy-W0-eft" eventType="touchUpInside" id="r7G-Pn-ITI"/>
                                     <segue destination="Zu1-yZ-3lV" kind="show" id="VO0-Wu-0K9"/>
@@ -92,6 +93,9 @@
                                 <state key="normal" title="Войти">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="278" y="451" width="44" height="48"/>
+                                </variation>
                                 <connections>
                                     <action selector="login" destination="Piy-W0-eft" eventType="touchUpInside" id="2q0-EC-rrR"/>
                                 </connections>
@@ -309,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="384" y="820"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Map Box View Controller-->
         <scene sceneID="WPN-Se-4da">
             <objects>
-                <viewController storyboardIdentifier="web" id="Rkc-9K-r0C" customClass="WebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" id="Rkc-9K-r0C" customClass="MapBoxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bTW-pP-92R"/>
                         <viewControllerLayoutGuide type="bottom" id="Dd4-Mv-6Ix"/>
@@ -320,61 +324,10 @@
                     <view key="view" contentMode="scaleToFill" id="zxP-bw-tfk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kf5-FZ-5yH">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="536" id="2Xb-d6-ijj"/>
-                                    <constraint firstAttribute="width" constant="400" id="H9D-LZ-YXA"/>
-                                </constraints>
-                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2Xb-d6-ijj"/>
-                                        <exclude reference="H9D-LZ-YXA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="2Xb-d6-ijj"/>
-                                        <include reference="H9D-LZ-YXA"/>
-                                    </mask>
-                                </variation>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Kf5-FZ-5yH" firstAttribute="width" secondItem="zxP-bw-tfk" secondAttribute="width" id="9eX-ZQ-NOg"/>
-                            <constraint firstItem="Kf5-FZ-5yH" firstAttribute="height" secondItem="zxP-bw-tfk" secondAttribute="height" id="at4-e1-Kvv"/>
-                            <constraint firstItem="Kf5-FZ-5yH" firstAttribute="top" secondItem="bTW-pP-92R" secondAttribute="bottom" id="d5Y-nl-K0E"/>
-                            <constraint firstItem="Kf5-FZ-5yH" firstAttribute="leading" secondItem="zxP-bw-tfk" secondAttribute="leadingMargin" constant="-16" id="yOo-dg-fwg"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Kf5-FZ-5yH"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="9eX-ZQ-NOg"/>
-                                <exclude reference="at4-e1-Kvv"/>
-                                <exclude reference="d5Y-nl-K0E"/>
-                                <exclude reference="yOo-dg-fwg"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Kf5-FZ-5yH"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="9eX-ZQ-NOg"/>
-                                <include reference="at4-e1-Kvv"/>
-                                <include reference="d5Y-nl-K0E"/>
-                                <include reference="yOo-dg-fwg"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="viewWeb" destination="Kf5-FZ-5yH" id="94U-jh-XAe"/>
+                        <outlet property="view" destination="zxP-bw-tfk" id="8a2-0V-8x6"/>
                         <segue destination="lac-CX-wK8" kind="show" id="M9Y-1l-KAK"/>
                     </connections>
                 </viewController>
@@ -499,7 +452,7 @@
                     </toolbar>
                     <connections>
                         <segue destination="lac-CX-wK8" kind="relationship" relationship="rootViewController" id="Trl-Ot-1qu"/>
-                        <segue destination="Rkc-9K-r0C" kind="show" id="gf5-QZ-ZZD"/>
+                        <segue destination="Rkc-9K-r0C" kind="show" id="SL8-pg-OGs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4b-Hp-Npz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -508,6 +461,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M9Y-1l-KAK"/>
+        <segue reference="Trl-Ot-1qu"/>
     </inferredMetricsTieBreakers>
 </document>
