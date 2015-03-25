@@ -153,7 +153,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:chatViewController];
 
     self.window.rootViewController = navigation;
-//    self.window.rootViewController = chatViewController;
+    //    self.window.rootViewController = chatViewController;
 
 
 
@@ -316,7 +316,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     if (!(mes = [message elementForName:@"received"])){
         NSString *msg = [[message elementForName:@"text"] stringValue];
         NSString *from = [[message elementForName:@"user"] stringValue];
-       // NSString *identificator = [[message elementForName:@"id"] stringValue];
+        // NSString *identificator = [[message elementForName:@"id"] stringValue];
         //  UIImage * image  = [[message elementForName:@"img"] ];
         [m setObject:msg forKey:@"msg"];
         [m setObject:from forKey:@"sender"];
@@ -328,7 +328,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
         [m setObject:@"all is ok" forKey:@"msg"];
         [m setObject:@"okMsg" forKey:@"sender"];
         [m setObject:[NSDate dateWithTimeIntervalSinceNow:0] forKey:@"date"];
-       // [m setObject:s forKey:@"id"];
+        [m setObject:s forKey:@"id"];
     }
 
     [_messageDelegate newMessageReceived:m animated:YES];
@@ -351,7 +351,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     }
     UIStoryboard * Main= [UIStoryboard storyboardWithName:device bundle:nil];
     SMLoginView * loginView = [Main instantiateViewControllerWithIdentifier:@"login"] ;
-    
+
     self.window.rootViewController = loginView;
     //    [self.window.rootViewController presentViewController:loginViewController animated:YES completion:nil];
 }
@@ -361,14 +361,14 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 {
     NSLog(@"didDetectAccidentalDisconnect:%u",connectionFlags);
     //chatViewController.waitingConnection.alpha = 1;
-    
+
 }
 - (BOOL)xmppReconnect:(XMPPReconnect *)sender shouldAttemptAutoReconnect:(SCNetworkReachabilityFlags)reachabilityFlags
 {
     NSLog(@"shouldAttemptAutoReconnect:%u",reachabilityFlags);
-    
-    
-    
+
+
+
     return YES;
 }
 
@@ -405,20 +405,20 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     UIStoryboard * Main= [UIStoryboard storyboardWithName:device bundle:nil];
 
     chatViewController = [Main instantiateViewControllerWithIdentifier:@"registration"] ;
-
-
+    
+    
     [UIView transitionFromView:self.window.rootViewController.view
                         toView:chatViewController.view
                       duration:0.65f
                        options:UIViewAnimationOptionTransitionCrossDissolve
-
+     
                     completion:^(BOOL finished) {
                         self.window.rootViewController = chatViewController;
                     }];
     
     
     
-
+    
     [alert show];
     
 }

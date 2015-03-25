@@ -38,6 +38,7 @@
  *  Returns the display name for the user who sent the message. This value does not have to be unique.
  */
 @property (copy, nonatomic, readonly) NSString *senderDisplayName;
+@property (copy, nonatomic) NSString *identifier;
 
 /**
  *  Returns the date that the message was sent.

@@ -27,7 +27,7 @@
     [super viewDidLoad];
     messages = [[NSMutableArray alloc ] init];
 
-    self.title = @"JSQMessages";
+    self.title = @"Кампус Гид";
 
     /**
      *  You MUST set your senderId and display name
@@ -81,11 +81,11 @@
     GeoLtitude = [NSString stringWithFormat:@"%.8f", 43.0288];
     GeoLength = [NSString stringWithFormat:@"%.8f", 131.9013];
 
-//    [NSTimer scheduledTimerWithTimeInterval:3
-//                                     target:self
-//                                   selector:@selector(sendQuery)
-//                                   userInfo:nil
-//                                    repeats:YES];
+    //    [NSTimer scheduledTimerWithTimeInterval:3
+    //                                     target:self
+    //                                   selector:@selector(sendQuery)
+    //                                   userInfo:nil
+    //                                    repeats:YES];
     firstUpdateLocation = true;
     [self sendQuery];
 }
@@ -206,18 +206,30 @@
     [self.navigationController pushViewController:webView animated:YES ];
 }
 
+
+-(void) foundMessage: (NSString*)byId{
+
+    for(JSQMessage* mes in self.demoData.messages ){
+        if ( [mes.identifier isEqualToString:byId]){
+            mes.delivered  = YES;
+        }
+    }
+
+}
+
 - (void)newMessageReceived:(NSMutableArray *)messageContent animated:(BOOL)animated {
 
     NSString *msg = [messageContent valueForKey:@"msg"];
     NSString *sender = [messageContent valueForKey:@"sender"];
     NSDate* date = [messageContent valueForKey:@"date"];
-
+    NSString* identificator = [messageContent valueForKey:@"id"];
     JSQMessage *m = [[JSQMessage alloc] initWithSenderId:sender
                                        senderDisplayName:sender
                                                     date:date
                                                     text:msg];
     if([sender  isEqual:@"you"]){
-        m.delivered = YES;
+
+        [self foundMessage:identificator];
     }
 
     [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
@@ -330,12 +342,11 @@
 
     [self.demoData.messages addObject:m];
 
-    [self finishReceivingMessageAnimated:YES];
+    [self finishSendingMessageAnimated:YES];
 
 
 
 }
-
 
 - (void)didPressSendButton:(UIButton *)button
            withMessageText:(NSString *)text
@@ -372,8 +383,8 @@
                                        senderDisplayName:senderId
                                                     date:date
                                                     text:text];
-    m.delivered = YES;
-
+    m.delivered = NO;
+    m.identifier = [NSString stringWithFormat:@"%d", identifier];
     [self.demoData.messages addObject:m];
 
     [self finishSendingMessageAnimated:YES];
@@ -601,6 +612,7 @@
         }
     }
 
+
     if(message.senderId == self.senderId)
         return [self.demoData.avatars objectForKey:kJSQDemoAvatarIdJobs];
     else
@@ -650,7 +662,28 @@
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
+    JSQMessage *message = [self.demoData.messages objectAtIndex:indexPath.item];
+    if (message.delivered){
+        //Resize
+        UIImage *img = [UIImage imageNamed:@"ok.jpg"];
+        CGSize newSize = CGSizeMake(10, 10);
+
+        UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+        [img drawInRect:CGRectMake(0, 0, 10, 10)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+
+        //Add to string
+
+        NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
+        textAttachment.image = newImage;
+        NSAttributedString *attrStringWithImage = [NSAttributedString attributedStringWithAttachment:textAttachment];
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] init];
+        [attrStr appendAttributedString:attrStringWithImage];
+        return attrStr;}
+
     return nil;
+
 }
 
 #pragma mark - UICollectionView DataSource
@@ -749,7 +782,7 @@
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0.0f;
+    return 10.0f;
 }
 
 #pragma mark - Responding to collection view tap events
