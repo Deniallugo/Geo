@@ -16,12 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *fullURL = @"http://vk.com/";
+    self.navigationItem.title=@"Карта с сообщениями";
+
+    NSString *fullURL =@"http://5.143.17.232:5223/?lon=" ;
+
+    NSString* lat =[[[[NSNumber numberWithFloat:self.longtitude] stringValue] stringByAppendingString:@"&lat="] stringByAppendingString:[[NSNumber numberWithFloat:self.latitude] stringValue]];
+
+    _webView.delegate = self;
+   fullURL = [fullURL stringByAppendingString:lat];
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_viewWeb loadRequest:requestObj];
+    
+    [_webView loadRequest:requestObj];
+
+    loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(145, 190, 20,20)]; [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray]; [loadingIndicator setHidesWhenStopped:YES];
+    [_webView addSubview:loadingIndicator];
+}
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+[loadingIndicator startAnimating];
 }
 
+
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [loadingIndicator stopAnimating];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

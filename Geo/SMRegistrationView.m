@@ -38,8 +38,8 @@
      [[self xmppStream ] registerWithElements:elements error:&error];
 
 }
--(void) viewDidLoad{
-    self.navigationController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+-(void) viewWillAppear:(BOOL)animated {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                                                target:self
                                                                                                                action:@selector(close)];
 

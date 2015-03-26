@@ -62,11 +62,11 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 
 
     // Setup the XMPP stream
-    host = @"5.143.74.248";
+    host = @"5.143.17.232";
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:chatViewController];
+    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:loginViewController];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
 

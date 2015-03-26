@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hqo-64-R16">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Piy-W0-eft">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -39,18 +39,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="137" y="112" width="127" height="21"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkO-u5-4pM">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Регистрация">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="254" y="499" width="92" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="registration" destination="Piy-W0-eft" eventType="touchUpInside" id="r7G-Pn-ITI"/>
                                     <segue destination="Zu1-yZ-3lV" kind="show" id="VO0-Wu-0K9"/>
@@ -93,9 +87,6 @@
                                 <state key="normal" title="Войти">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="278" y="451" width="44" height="48"/>
-                                </variation>
                                 <connections>
                                     <action selector="login" destination="Piy-W0-eft" eventType="touchUpInside" id="2q0-EC-rrR"/>
                                 </connections>
@@ -103,6 +94,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BX6-Uq-qcG" secondAttribute="centerY" constant="177.5" id="08D-JL-4nb"/>
                             <constraint firstAttribute="centerY" secondItem="Ryo-tA-OH8" secondAttribute="centerY" constant="-175" id="FP8-lg-SIf"/>
                             <constraint firstAttribute="centerX" secondItem="BX6-Uq-qcG" secondAttribute="centerX" constant="-0.5" id="Oib-YL-5DZ"/>
                             <constraint firstAttribute="centerX" secondItem="fkO-u5-4pM" secondAttribute="centerX" id="au4-1n-QPw"/>
@@ -123,6 +115,7 @@
                                 <exclude reference="Ryo-tA-OH8"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="08D-JL-4nb"/>
                                 <exclude reference="Oib-YL-5DZ"/>
                                 <exclude reference="FP8-lg-SIf"/>
                                 <exclude reference="dZ5-ta-CNV"/>
@@ -144,6 +137,7 @@
                                 <include reference="Ryo-tA-OH8"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="08D-JL-4nb"/>
                                 <include reference="Oib-YL-5DZ"/>
                                 <include reference="FP8-lg-SIf"/>
                                 <include reference="dZ5-ta-CNV"/>
@@ -180,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Det-up-Enp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154" y="820"/>
+            <point key="canvasLocation" x="2041.5" y="820"/>
         </scene>
         <!--Registration View-->
         <scene sceneID="2tr-vd-mtq">
@@ -292,12 +286,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCb-Pr-DSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2946" y="820"/>
+            <point key="canvasLocation" x="2833.5" y="820"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lqq-hy-Bhq">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" hidesBarsWhenKeyboardAppears="YES" id="hqo-64-R16" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="hqo-64-R16" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AUW-So-IxT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -313,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="384" y="820"/>
         </scene>
-        <!--Map Box View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="WPN-Se-4da">
             <objects>
-                <viewController storyboardIdentifier="map" id="Rkc-9K-r0C" customClass="MapBoxViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" hidesBottomBarWhenPushed="YES" id="Rkc-9K-r0C" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bTW-pP-92R"/>
                         <viewControllerLayoutGuide type="bottom" id="Dd4-Mv-6Ix"/>
@@ -324,16 +318,35 @@
                     <view key="view" contentMode="scaleToFill" id="zxP-bw-tfk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9X-GM-Sc0">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="m9X-GM-Sc0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="m9X-GM-Sc0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="view" destination="zxP-bw-tfk" id="8a2-0V-8x6"/>
+                        <outlet property="webView" destination="m9X-GM-Sc0" id="kjg-PH-haR"/>
                         <segue destination="lac-CX-wK8" kind="show" id="M9Y-1l-KAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3h2-x0-qGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="292.5" y="-946"/>
+            <point key="canvasLocation" x="394.5" y="-726"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="rXK-oQ-rpT">
@@ -355,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I04-Zp-XXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.5" y="-192"/>
+            <point key="canvasLocation" x="1153.5" y="64"/>
         </scene>
         <!--Radius View Controller-->
         <scene sceneID="yjj-uT-mkE">
@@ -369,15 +382,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EAh-xP-tvT">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="141" y="222" width="118" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="changeRadius:" destination="fuH-Ij-Bw5" eventType="valueChanged" id="N6X-V9-IuH"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bit-ih-jUk">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="OK">
@@ -388,27 +392,47 @@
                                     <segue destination="lac-CX-wK8" kind="show" id="cJA-2u-pZA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6z-BF-g3O">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6z-BF-g3O">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменить радиус" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af4-Wm-jA1">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EAh-xP-tvT">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="225" width="200" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="changeRadius:" destination="fuH-Ij-Bw5" eventType="valueChanged" id="N6X-V9-IuH"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="U6z-BF-g3O" secondAttribute="centerX" constant="8" id="AKQ-ua-T6S"/>
                             <constraint firstAttribute="centerY" secondItem="bit-ih-jUk" secondAttribute="centerY" constant="-84" id="BGz-uC-wsn"/>
+                            <constraint firstAttribute="centerX" secondItem="Af4-Wm-jA1" secondAttribute="centerX" constant="-0.5" id="Ju6-Mk-5aB"/>
                             <constraint firstAttribute="centerX" secondItem="bit-ih-jUk" secondAttribute="centerX" constant="8" id="oAO-rY-T6h"/>
+                            <constraint firstAttribute="centerY" secondItem="Af4-Wm-jA1" secondAttribute="centerY" constant="209.5" id="qYa-Om-bxi"/>
                             <constraint firstAttribute="centerY" secondItem="U6z-BF-g3O" secondAttribute="centerY" constant="0.5" id="yUA-7k-z3G"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="EAh-xP-tvT"/>
                                 <exclude reference="bit-ih-jUk"/>
                                 <exclude reference="U6z-BF-g3O"/>
+                                <exclude reference="Af4-Wm-jA1"/>
+                                <exclude reference="EAh-xP-tvT"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Ju6-Mk-5aB"/>
+                                <exclude reference="qYa-Om-bxi"/>
                                 <exclude reference="AKQ-ua-T6S"/>
                                 <exclude reference="yUA-7k-z3G"/>
                                 <exclude reference="BGz-uC-wsn"/>
@@ -417,11 +441,14 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="EAh-xP-tvT"/>
                                 <include reference="bit-ih-jUk"/>
                                 <include reference="U6z-BF-g3O"/>
+                                <include reference="Af4-Wm-jA1"/>
+                                <include reference="EAh-xP-tvT"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Ju6-Mk-5aB"/>
+                                <include reference="qYa-Om-bxi"/>
                                 <include reference="AKQ-ua-T6S"/>
                                 <include reference="yUA-7k-z3G"/>
                                 <include reference="BGz-uC-wsn"/>
@@ -436,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F84-jc-u2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939.5" y="-201"/>
+            <point key="canvasLocation" x="2041.5" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rp8-aa-VUh">
@@ -457,10 +484,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4b-Hp-Npz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="-192"/>
+            <point key="canvasLocation" x="384" y="64"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Trl-Ot-1qu"/>
+        <segue reference="M9Y-1l-KAK"/>
     </inferredMetricsTieBreakers>
 </document>

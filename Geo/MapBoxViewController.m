@@ -26,10 +26,10 @@
     RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds
                                             andTilesource:tileSource];
     // set zoom
-    mapView.zoom = 15;
+    mapView.zoom = 4;
 
     // set coordinates
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.longtitude,self.latitude);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.latitude,self.longtitude);
 
     // center the map to the coordinates
     mapView.centerCoordinate = center;

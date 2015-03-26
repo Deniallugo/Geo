@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIWebView *viewWeb;
+@interface WebViewController : UIViewController{
+    UIActivityIndicatorView *loadingIndicator;
+}
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (assign) float latitude;
+@property (assign)  float longtitude;
 
 @end

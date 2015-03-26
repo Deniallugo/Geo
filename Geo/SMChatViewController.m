@@ -172,20 +172,30 @@
 {
     [super viewWillAppear:animated];
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo
+
+    UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"map.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(goToWebMap)forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(0, 0, 30, 31)];
+
+    UIBarButtonItem* WebButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
                                                                                           action:@selector(closeChat)];
 
 
-    UIBarButtonItem* radiusButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:                      UIBarButtonSystemItemRefresh
-                                                                                  target:self
-                                                                                  action:@selector(goToRadius)];
 
 
-    UIBarButtonItem* WebButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:
-                                  UIBarButtonSystemItemSearch
-                                                                               target:self
-                                                                               action:@selector(goToWebMap)];
+    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setImage:[UIImage imageNamed:@"resize.png"] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(goToRadius)forControlEvents:UIControlEventTouchUpInside];
+    [button2 setFrame:CGRectMake(0, 0, 30, 31)];
+
+    UIBarButtonItem* radiusButton = [[UIBarButtonItem alloc] initWithCustomView:button2];
+
+
 
     self.navigationItem.rightBarButtonItems=[[NSArray alloc] initWithObjects:radiusButton,WebButton, nil];
 
@@ -201,12 +211,21 @@
 
 -(void) goToWebMap{
 
+//
+//    MapBoxViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+//
+//    mapView.latitude = [GeoLatitude floatValue];
+//    mapView.longtitude = [GeoLongtitude floatValue];
+//    [self.navigationController pushViewController:mapView animated:YES ];
 
-    MapBoxViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    //
+        WebViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+        mapView.latitude = [GeoLatitude floatValue];
+        mapView.longtitude = [GeoLongtitude floatValue];
+    
 
-    mapView.latitude = [GeoLatitude floatValue];
-    mapView.longtitude = [GeoLongtitude floatValue];
-    [self.navigationController pushViewController:mapView animated:YES ];
+        [self.navigationController pushViewController:mapView animated:YES ];
+
 }
 
 
@@ -230,9 +249,14 @@
                                        senderDisplayName:sender
                                                     date:date
                                                     text:msg];
-    if([sender  isEqual:@"you"]){
+    if([sender  isEqual:@"okMsg"]){
 
         [self foundMessage:identificator];
+        [self finishReceivingMessageAnimated:animated];
+        return;
+    }
+    if([sender  isEqual:@"you"]){
+        m.delivered=YES;
     }
 
     [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
@@ -334,15 +358,16 @@
 
     }
 
-    //        [self.xmppStream sendElement:message];
-    //
-    //    }
+    [self.xmppStream sendElement:message];
+    
+
     JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:imagePic];
     JSQMessage *m = [[JSQMessage alloc] initWithSenderId:self.senderId
                                        senderDisplayName:self.senderId
                                                     date:[NSDate dateWithTimeIntervalSinceNow:0]
                                                    media:photoItem];
 
+    m.delivered = NO;
     [self.demoData.messages addObject:m];
 
     [self finishSendingMessageAnimated:YES];
@@ -617,7 +642,7 @@
 
 
     if(message.senderId == self.senderId)
-        return [self.demoData.avatars objectForKey:kJSQDemoAvatarIdJobs];
+        return [self.demoData.avatars objectForKey:kJSQDemoAvatarIdCook];
     else
         return [self.demoData.avatars objectForKey:kJSQDemoAvatarIdWoz];
 
@@ -646,21 +671,21 @@
     /**
      *  iOS7-style sender name labels
      */
-    if ([message.senderId isEqualToString:self.senderId]) {
-        return nil;
-    }
+//    if ([message.senderId isEqualToString:self.senderId]) {
+//        return nil;
+//    }
 
-    if (indexPath.item - 1 > 0) {
-        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
-        if ([[previousMessage senderId] isEqualToString:message.senderId]) {
-            return nil;
-        }
-    }
+//    if (indexPath.item - 1 > 0) {
+//        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
+//        if ([[previousMessage senderId] isEqualToString:message.senderId]) {
+//            return nil;
+//        }
+//    }
 
     /**
      *  Don't specify attributes to use the defaults.
      */
-    return [[NSAttributedString alloc] initWithString:message.senderDisplayName];
+    return [[NSAttributedString alloc] initWithString:message.senderId];
 }
 
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath
@@ -769,7 +794,7 @@
      */
     JSQMessage *currentMessage = [self.demoData.messages objectAtIndex:indexPath.item];
     if ([[currentMessage senderId] isEqualToString:self.senderId]) {
-        return 0.0f;
+        return kJSQMessagesCollectionViewCellLabelHeightDefault;
     }
 
     if (indexPath.item - 1 > 0) {

@@ -52,7 +52,6 @@ XMPPRosterDelegate,XMPPReconnectDelegate>
 
         BOOL allowSelfSignedCertificates;
         BOOL allowSSLHostNameMismatch;
-        NSError *error;
         NSString *host;
 
 }
