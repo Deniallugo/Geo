@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B19BD0992D2B25027E59291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D11B7D3D30C3CC12D55B63 /* libPods.a */; };
+		830E62541AC593C400C8E16B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E62531AC593C400C8E16B /* ImageViewController.m */; };
 		8315A9F01ABDC52A004612C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315A9DB1ABDC52A004612C2 /* AppDelegate.m */; };
 		8315A9F11ABDC52A004612C2 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315A9DD1ABDC52A004612C2 /* DemoModelData.m */; };
 		8315A9F21ABDC52A004612C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8315A9DE1ABDC52A004612C2 /* Info.plist */; };
@@ -188,6 +189,8 @@
 /* Begin PBXFileReference section */
 		32D11B7D3D30C3CC12D55B63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		616A1B0D3DBFDFD01508943B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		830E62521AC593C400C8E16B /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		830E62531AC593C400C8E16B /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		8315A9DA1ABDC52A004612C2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8315A9DB1ABDC52A004612C2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8315A9DC1ABDC52A004612C2 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -1477,6 +1480,8 @@
 				833C1E291ABE45F600535901 /* WebViewController.m */,
 				8336E5D71AC2738C00832F42 /* MapBoxViewController.h */,
 				8336E5D81AC2738C00832F42 /* MapBoxViewController.m */,
+				830E62521AC593C400C8E16B /* ImageViewController.h */,
+				830E62531AC593C400C8E16B /* ImageViewController.m */,
 			);
 			path = Geo;
 			sourceTree = "<group>";
@@ -1708,6 +1713,7 @@
 				8315ABB41ABDC54D004612C2 /* XMPPRegistration.m in Sources */,
 				8315ABDC1ABDC54D004612C2 /* DDList.m in Sources */,
 				8315AB8A1ABDC54D004612C2 /* XMPPRoster.m in Sources */,
+				830E62541AC593C400C8E16B /* ImageViewController.m in Sources */,
 				8315ABEE1ABDC54D004612C2 /* DDXMLDocument.m in Sources */,
 				8315AB7B1ABDC54D004612C2 /* XMPPCoreDataStorage.m in Sources */,
 				8315ABE61ABDC54D004612C2 /* DDFileLogger.m in Sources */,

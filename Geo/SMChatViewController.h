@@ -14,6 +14,7 @@
 #import "RadiusViewController.h"
 #import "JSQMessages.h"
 #import "WebViewController.h"
+#import "ImageViewController.h"
 
 @class SMChatViewController;
 
@@ -35,10 +36,11 @@
     bool            firstUpdateLocation;
     NSMutableArray *turnSockets;
     NSInteger identifier;
-
-
-
     
+
+    NSInteger timeInterval;
+
+
 
 }
 
@@ -73,6 +75,7 @@
 
 - (id) initWithUser:(NSString *) userName;
 //- (IBAction) sendMessage;
+-(void) runTimer:(NSInteger) time;
 - (IBAction) closeChat;
 - (void)radiusChange:(float)radius;
 - (IBAction)openCamera: (id)sender;

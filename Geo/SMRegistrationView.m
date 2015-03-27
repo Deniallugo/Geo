@@ -16,12 +16,13 @@
 -(IBAction)registr{
     [self createAccount];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
 - (void)close {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+ //   [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -36,10 +37,11 @@
 
 
      [[self xmppStream ] registerWithElements:elements error:&error];
+    
 
 }
 -(void) viewWillAppear:(BOOL)animated {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+    self.navigationController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                                                target:self
                                                                                                                action:@selector(close)];
 

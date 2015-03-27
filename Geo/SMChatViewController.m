@@ -36,7 +36,9 @@
     self.senderDisplayName = kJSQDemoAvatarDisplayNameSquires;
     if(Radius == 0)
         Radius = 500;
-
+    if(timeInterval == 0){
+        timeInterval = 5;
+    }
     /**
      *  Load up our fake data for the demo
      */
@@ -80,14 +82,18 @@
 
     GeoLatitude = [NSString stringWithFormat:@"%.8f", 43.0288];
     GeoLongtitude = [NSString stringWithFormat:@"%.8f", 131.9013];
+    [self runTimer:timeInterval];
 
-    //    [NSTimer scheduledTimerWithTimeInterval:3
-    //                                     target:self
-    //                                   selector:@selector(sendQuery)
-    //                                   userInfo:nil
-    //                                    repeats:YES];
     firstUpdateLocation = true;
     [self sendQuery];
+}
+
+-(void) runTimer:(NSInteger) time{
+    //        [NSTimer scheduledTimerWithTimeInterval:time
+    //                                         target:self
+    //                                       selector:@selector(sendQuery)
+    //                                       userInfo:nil
+    //                                        repeats:YES];
 }
 
 
@@ -154,11 +160,12 @@
 
 - (IBAction) closeChat {
 
-
+    //
     UIStoryboard * Main= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SMLoginView * loginView = [Main instantiateViewControllerWithIdentifier:@"login"] ;
-
-    [self presentViewController:loginView animated:YES completion:nil];
+    //
+    //    [self presentViewController:loginView animated:YES completion:nil];
+    [self.navigationController pushViewController:loginView animated:YES];
 
 }
 
@@ -181,7 +188,7 @@
     UIBarButtonItem* WebButton = [[UIBarButtonItem alloc] initWithCustomView:button];
 
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                           target:self
                                                                                           action:@selector(closeChat)];
 
@@ -199,6 +206,13 @@
 
     self.navigationItem.rightBarButtonItems=[[NSArray alloc] initWithObjects:radiusButton,WebButton, nil];
 
+
+    //    UISlider* slider = [[UISlider alloc]init];
+    //  [self.view addSubview:slider];
+
+
+
+
 }
 
 
@@ -206,25 +220,26 @@
 
 
     RadiusViewController* radiusView = [self.storyboard instantiateViewControllerWithIdentifier:@"radius"];
+    radiusView.radius1 = Radius;
     [self.navigationController pushViewController:radiusView animated:YES ];
 }
 
 -(void) goToWebMap{
 
-//
-//    MapBoxViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-//
-//    mapView.latitude = [GeoLatitude floatValue];
-//    mapView.longtitude = [GeoLongtitude floatValue];
-//    [self.navigationController pushViewController:mapView animated:YES ];
+    //
+    //    MapBoxViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    //
+    //    mapView.latitude = [GeoLatitude floatValue];
+    //    mapView.longtitude = [GeoLongtitude floatValue];
+    //    [self.navigationController pushViewController:mapView animated:YES ];
 
     //
-        WebViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
-        mapView.latitude = [GeoLatitude floatValue];
-        mapView.longtitude = [GeoLongtitude floatValue];
-    
+    WebViewController * mapView = [self.storyboard instantiateViewControllerWithIdentifier:@"map"];
+    mapView.latitude = [GeoLatitude floatValue];
+    mapView.longtitude = [GeoLongtitude floatValue];
 
-        [self.navigationController pushViewController:mapView animated:YES ];
+
+    [self.navigationController pushViewController:mapView animated:YES ];
 
 }
 
@@ -245,10 +260,33 @@
     NSString *sender = [messageContent valueForKey:@"sender"];
     NSDate* date = [messageContent valueForKey:@"date"];
     NSString* identificator = [messageContent valueForKey:@"id"];
-    JSQMessage *m = [[JSQMessage alloc] initWithSenderId:sender
-                                       senderDisplayName:sender
-                                                    date:date
-                                                    text:msg];
+    JSQMessage *m   ;
+    UIImage* imagePic = [messageContent valueForKey:@"image"];
+    if(imagePic){
+
+        //        CGSize newSize = CGSizeMake(10, 10);
+        //
+        //        UIGraphicsBeginImageContext(newSize);
+        //
+        //        //UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+        //        [imagePic drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+        //        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        //        UIGraphicsEndImageContext();
+
+
+        JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:imagePic];
+        m = [[JSQMessage alloc] initWithSenderId:self.senderId
+                               senderDisplayName:self.senderId
+                                            date:[NSDate dateWithTimeIntervalSinceNow:0]
+                                           media:photoItem];
+    }
+    else{
+        m = [[JSQMessage alloc] initWithSenderId:sender
+                               senderDisplayName:sender
+                                            date:date
+                                            text:msg];
+    }
+
     if([sender  isEqual:@"okMsg"]){
 
         [self foundMessage:identificator];
@@ -263,40 +301,41 @@
     [self.demoData.messages addObject:m];
     [self finishReceivingMessageAnimated:animated];
 
-    //
-    //    if (newMessage.isMediaMessage) {
-    //        /**
-    //         *  Simulate "downloading" media
-    //         */
-    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+
+    //        if (newMessage.isMediaMessage) {
     //            /**
-    //             *  Media is "finished downloading", re-display visible cells
-    //             *
-    //             *  If media cell is not visible, the next time it is dequeued the view controller will display its new attachment data
-    //             *
-    //             *  Reload the specific item, or simply call `reloadData`
+    //             *  Simulate "downloading" media
     //             */
+    //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //                /**
+    //                 *  Media is "finished downloading", re-display visible cells
+    //                 *
+    //                 *  If media cell is not visible, the next time it is dequeued the view controller will display its new attachment data
+    //                 *
+    //                 *  Reload the specific item, or simply call `reloadData`
+    //                 */
     //
-    //            if ([newMediaData isKindOfClass:[JSQPhotoMediaItem class]]) {
-    //                ((JSQPhotoMediaItem *)newMediaData).image = newMediaAttachmentCopy;
-    //                [self.collectionView reloadData];
-    //            }
-    //            else if ([newMediaData isKindOfClass:[JSQLocationMediaItem class]]) {
-    //                [((JSQLocationMediaItem *)newMediaData)setLocation:newMediaAttachmentCopy withCompletionHandler:^{
+    //                if ([newMediaData isKindOfClass:[JSQPhotoMediaItem class]]) {
+    //                    ((JSQPhotoMediaItem *)newMediaData).image = newMediaAttachmentCopy;
     //                    [self.collectionView reloadData];
-    //                }];
-    //            }
-    //            else if ([newMediaData isKindOfClass:[JSQVideoMediaItem class]]) {
-    //                ((JSQVideoMediaItem *)newMediaData).fileURL = newMediaAttachmentCopy;
-    //                ((JSQVideoMediaItem *)newMediaData).isReadyToPlay = YES;
-    //                [self.collectionView reloadData];
-    //            }
-    //            else {
-    //                NSLog(@"%s error: unrecognized media item", __PRETTY_FUNCTION__);
-    //            }
+    //                }
+    //                else if ([newMediaData isKindOfClass:[JSQLocationMediaItem class]]) {
+    //                    [((JSQLocationMediaItem *)newMediaData)setLocation:newMediaAttachmentCopy withCompletionHandler:^{
+    //                        [self.collectionView reloadData];
+    //                    }];
+    //                }
+    //                else if ([newMediaData isKindOfClass:[JSQVideoMediaItem class]]) {
+    //                    ((JSQVideoMediaItem *)newMediaData).fileURL = newMediaAttachmentCopy;
+    //                    ((JSQVideoMediaItem *)newMediaData).isReadyToPlay = YES;
+    //                    [self.collectionView reloadData];
+    //                }
+    //                else {
+    //                    NSLog(@"%s error: unrecognized media item", __PRETTY_FUNCTION__);
+    //                }
     //
-    //        });
-    //    }
+    //            });
+    //        }
 
 
 
@@ -307,9 +346,8 @@
 - (void)newMessagesReceived:(NSMutableArray *)messagesRecv {
 
     [messages removeAllObjects];
-    for(int i = messagesRecv.count - 1  ; i >= 0 ; i--){
-
-        [self newMessageReceived:[messagesRecv objectAtIndex:i] animated:NO];
+    for(NSMutableArray* i in messagesRecv){
+        [self newMessageReceived:i animated:NO];
     }
 
 
@@ -321,22 +359,24 @@
 
 
 -(void) sendImage: (UIImage*) imagePic{
+    identifier++;
+
 
     NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
-
-    //        [body setStringValue:messageStr];
+    DDXMLElement *geo = [DDXMLElement elementWithName:@"geoloc" xmlns:@"http://jabber.org/protocol/geoloc"];
 
 
     NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
 
-    [message addAttributeWithName:@"type"stringValue:@"chat"];
+    [message addAttributeWithName:@"id" intValue:identifier];
 
-    [message addAttributeWithName:@"to"stringValue:nil];
-    [message addAttributeWithName:@"latitude" stringValue:GeoLatitude];
-    [message addAttributeWithName:@"length" stringValue:GeoLongtitude];
+    NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
+    NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
+    NSXMLElement * request = [NSXMLElement elementWithName:@"request" xmlns:@"urn:xmpp:receipts"];
 
+    [geo addChild:latitude];
+    [geo addChild:longitude];
 
-    [message addChild:body];
 
     if([imagePic isKindOfClass:[UIImage class]])
 
@@ -344,22 +384,32 @@
 
         NSData *dataPic =  UIImagePNGRepresentation(imagePic);
 
-        NSXMLElement *photo = [NSXMLElement elementWithName:@"PHOTO"];
+        //        NSXMLElement *photo = [NSXMLElement elementWithName:@"PHOTO"];
 
-        NSXMLElement *binval = [NSXMLElement elementWithName:@"BINVAL"];
+        NSXMLElement *image = [NSXMLElement elementWithName:@"image"];
 
-        [photo addChild:binval];
+        //        [photo addChild:binval];
 
-        NSString *base64String = [dataPic base64EncodedStringWithOptions:0];
+        NSString *base64String = [dataPic base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
 
-        [binval setStringValue:base64String];
+        [image setStringValue:base64String];
 
-        [message addChild:photo];
+        [message addChild:body];
+
+        [message addChild:geo];
+
+        [message addChild:image];
+
 
     }
 
+
+    [message addChild:request];
+
+
     [self.xmppStream sendElement:message];
-    
+
+
 
     JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:imagePic];
     JSQMessage *m = [[JSQMessage alloc] initWithSenderId:self.senderId
@@ -396,7 +446,7 @@
 
     NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
     NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
-    NSXMLElement * request = [NSXMLElement elementWithName:@"request" stringValue:@"urn:xmpp:receipts"];
+    NSXMLElement * request = [NSXMLElement elementWithName:@"request" xmlns:@"urn:xmpp:receipts"];
 
     [geo addChild:latitude];
     [geo addChild:longitude];
@@ -412,7 +462,7 @@
                                                     date:date
                                                     text:text];
     m.delivered = NO;
-    m.identifier = [NSString stringWithFormat:@"%d", identifier];
+    m.identifier = [NSString stringWithFormat:@"%ld", (long)identifier];
     [self.demoData.messages addObject:m];
 
     [self finishSendingMessageAnimated:YES];
@@ -671,16 +721,16 @@
     /**
      *  iOS7-style sender name labels
      */
-//    if ([message.senderId isEqualToString:self.senderId]) {
-//        return nil;
-//    }
+    //    if ([message.senderId isEqualToString:self.senderId]) {
+    //        return nil;
+    //    }
 
-//    if (indexPath.item - 1 > 0) {
-//        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
-//        if ([[previousMessage senderId] isEqualToString:message.senderId]) {
-//            return nil;
-//        }
-//    }
+    //    if (indexPath.item - 1 > 0) {
+    //        JSQMessage *previousMessage = [self.demoData.messages objectAtIndex:indexPath.item - 1];
+    //        if ([[previousMessage senderId] isEqualToString:message.senderId]) {
+    //            return nil;
+    //        }
+    //    }
 
     /**
      *  Don't specify attributes to use the defaults.
@@ -828,6 +878,23 @@
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapMessageBubbleAtIndexPath:(NSIndexPath *)indexPath
 {
+    UICollectionViewCell* mes = [collectionView cellForItemAtIndexPath:indexPath];
+
+    UIView* imgView   ;
+    JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
+
+    if( msg.isMediaMessage){
+        UIStoryboard * Main= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ImageViewController * imageView = [Main instantiateViewControllerWithIdentifier:@"image"] ;
+        JSQPhotoMediaItem* item = msg.media;
+        imageView.view.image =         item.image;
+
+
+        //
+        //    [self presentViewController:loginView animated:YES completion:nil];
+        [self.navigationController pushViewController:imageView animated:YES];
+        
+    }
     NSLog(@"Tapped message bubble!");
 }
 
@@ -843,7 +910,7 @@
     if ([[segue identifier] isEqualToString:@"map"])
     {
         MapBoxViewController *vc = [segue destinationViewController];
-
+        
         vc.latitude = [GeoLatitude floatValue];
         vc.longtitude = [GeoLongtitude floatValue];
     }

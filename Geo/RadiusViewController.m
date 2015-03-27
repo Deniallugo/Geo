@@ -15,7 +15,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
+}
+-(void)viewWillAppear:(BOOL)animated {
+    self.slider.value = _radius1/100000;
+    self.viewRadius.text = [NSString stringWithFormat:@"%f",self->_radius1 ];
+    self.navigationItem.title=@"Изменить радиус";
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,9 +45,8 @@
 }
 
 - (IBAction)changeRadius:(id)sender {
-        self->radius1 = self.slider.value * 1000;
-        self.viewRadius.text = [NSString stringWithFormat:@"%f",self->radius1 ];
-
+        self->_radius1 = self.slider.value * 100000 + 0.1;
+        self.viewRadius.text = [NSString stringWithFormat:@"%f",self->_radius1 ];
 }
 
 
@@ -48,7 +54,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     SMChatViewController* vs = [segue destinationViewController];
-    [vs radiusChange:radius1];
+    [vs radiusChange:_radius1];
+
+    [vs runTimer:_time];
+    
 }
 
+- (IBAction)changeTime:(id)sender {
+//    self->_time = self.slider1.value * 100000 + 0.1;
+//    self.timer.text = [NSString stringWithFormat:@"%ld",(long)self->_time ];
+
+
+}
 @end

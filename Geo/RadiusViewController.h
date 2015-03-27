@@ -8,14 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RadiusViewController : UIViewController{
-    float radius1;
-}
+@interface RadiusViewController : UIViewController
+
+
+@property (assign) float radius1;
+@property (assign) NSInteger time;
 
 - (IBAction)okButton:(id)sender;
 - (IBAction)changeRadius:(id)sender;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 
 @property (weak, nonatomic) IBOutlet UILabel *viewRadius;
+- (IBAction)changeTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *timer;
+@property (weak, nonatomic) IBOutlet UISlider *slider1;
 
 @end

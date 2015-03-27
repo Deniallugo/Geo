@@ -284,10 +284,21 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
             else{
                 delivered = @"no";
             }
+            NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
+
             NSInteger a = [[i elementForName:@"time"] stringValueAsNSInteger];
             date = [NSDate dateWithTimeIntervalSince1970:a];
+            NSString * img = [[i elementForName:@"image"] stringValue];
+            if( img ){
+                NSDateFormatter *format = [[NSDateFormatter alloc] init];
+                [format setDateFormat:@"dd.MM.yyyy"];
 
-            NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
+                NSString *string = [format stringFromDate:date];
+                NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:5223/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
+                UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+                [m setObject:image forKey:@"image"];
+
+            }
             [m setObject:text forKey:@"msg"];
             [m setObject:user forKey:@"sender"];
             [m setObject:date forKey:@"date"];
@@ -316,8 +327,39 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     if (!(mes = [message elementForName:@"received"])){
         NSString *msg = [[message elementForName:@"text"] stringValue];
         NSString *from = [[message elementForName:@"user"] stringValue];
-        // NSString *identificator = [[message elementForName:@"id"] stringValue];
-        //  UIImage * image  = [[message elementForName:@"img"] ];
+        NSString *identificator = [[message elementForName:@"id"] stringValue];
+        // UIImage * image  = [[message elementForName:@"img"]];
+
+        NSString* delivered ;
+        if(!identificator){
+            identificator =@"1";
+        }
+        NSDate *date = [[NSDate alloc]init];
+
+        if([from isEqual:login]){
+            from = @"you";
+            delivered =@"yes";
+
+        }
+        else{
+            delivered = @"no";
+        }
+
+        NSInteger a = [[message elementForName:@"time"] stringValueAsNSInteger];
+        date = [NSDate dateWithTimeIntervalSince1970:a];
+        NSString * img = [[message elementForName:@"image"] stringValue];
+        if( img ){
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"dd.MM.yyyy"];
+
+            NSString *string = [format stringFromDate:date];
+            NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:5223/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
+            UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+            [m setObject:image forKey:@"image"];
+
+        }
+
+
         [m setObject:msg forKey:@"msg"];
         [m setObject:from forKey:@"sender"];
         [m setObject:@"0" forKey:@"id"];
@@ -378,6 +420,8 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration" message:@"Registration with XMPP Successful!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
+    [self.window.rootViewController presentViewController:loginViewController animated:YES completion:nil];
+    //    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
@@ -405,8 +449,8 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
     UIStoryboard * Main= [UIStoryboard storyboardWithName:device bundle:nil];
 
     chatViewController = [Main instantiateViewControllerWithIdentifier:@"registration"] ;
-    
-    
+
+
     [UIView transitionFromView:self.window.rootViewController.view
                         toView:chatViewController.view
                       duration:0.65f
@@ -417,6 +461,12 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
                     }];
     
     
+    //
+    //    UIStoryboard * Main= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    SMLoginView * regView = [Main instantiateViewControllerWithIdentifier:@"registration"] ;
+    //    //
+    //    //    [self presentViewController:loginView animated:YES completion:nil];
+    //    [self.navigationController pushViewController:regView animated:YES];
     
     
     [alert show];
