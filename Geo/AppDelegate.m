@@ -294,7 +294,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
                 [format setDateFormat:@"dd.MM.yyyy"];
 
                 NSString *string = [format stringFromDate:date];
-                NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:5223/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
+                NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:80/images/full/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
                 UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
                 [m setObject:image forKey:@"image"];
 

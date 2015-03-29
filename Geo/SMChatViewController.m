@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SMLoginView.h"
 #import "TURNSocket.h"
-#import "MapBoxViewController.h"
+//#import "MapBoxViewController.h"
 
 @implementation SMChatViewController{
 
@@ -878,22 +878,33 @@
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapMessageBubbleAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell* mes = [collectionView cellForItemAtIndexPath:indexPath];
 
-    UIView* imgView   ;
     JSQMessage *msg = [self.demoData.messages objectAtIndex:indexPath.item];
 
     if( msg.isMediaMessage){
-        UIStoryboard * Main= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        ImageViewController * imageView = [Main instantiateViewControllerWithIdentifier:@"image"] ;
+
+        // Create image info
+        JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+
+
         JSQPhotoMediaItem* item = msg.media;
-        imageView.view.image =         item.image;
+
+        imageInfo.image = item.image;
 
 
-        //
-        //    [self presentViewController:loginView animated:YES completion:nil];
-        [self.navigationController pushViewController:imageView animated:YES];
-        
+        JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                               initWithImageInfo:imageInfo
+                                               mode:JTSImageViewControllerMode_Image
+                                               backgroundStyle:JTSImageViewController_DefaultBackgroundBlurRadius];
+
+        [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+
+
+
+
+
+
+
     }
     NSLog(@"Tapped message bubble!");
 }
@@ -907,16 +918,5 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"map"])
-    {
-        MapBoxViewController *vc = [segue destinationViewController];
-        
-        vc.latitude = [GeoLatitude floatValue];
-        vc.longtitude = [GeoLongtitude floatValue];
     }
-    else
-    {
-        [super prepareForSegue:segue sender:sender];
-    }
-}
 @end

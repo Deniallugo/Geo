@@ -218,33 +218,6 @@
             </objects>
             <point key="canvasLocation" x="210" y="-688"/>
         </scene>
-        <!--Image View Controller-->
-        <scene sceneID="GRi-la-FKF">
-            <objects>
-                <viewController storyboardIdentifier="image" id="ref-Fl-pcQ" customClass="ImageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Ke-fZ-ZFR"/>
-                        <viewControllerLayoutGuide type="bottom" id="zoq-bx-K90"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vPG-bw-iwa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-zp-pJi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="42m-tD-YLa"/>
-                    <connections>
-                        <outlet property="view" destination="sxe-zp-pJi" id="vJi-0f-eX1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OGU-3i-0MF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="730" y="-688"/>
-        </scene>
         <!--Chat View Controller-->
         <scene sceneID="rXK-oQ-rpT">
             <objects>
@@ -261,7 +234,6 @@
                     <navigationItem key="navigationItem" id="Uul-ya-b4Q"/>
                     <connections>
                         <segue destination="fuH-Ij-Bw5" kind="push" id="2GP-A6-Hhu"/>
-                        <segue destination="ref-Fl-pcQ" kind="push" id="Ti7-pm-wNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I04-Zp-XXw" userLabel="First Responder" sceneMemberID="firstResponder"/>

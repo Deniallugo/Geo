@@ -14,7 +14,9 @@
 #import "RadiusViewController.h"
 #import "JSQMessages.h"
 #import "WebViewController.h"
-#import "ImageViewController.h"
+
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
 
 @class SMChatViewController;
 

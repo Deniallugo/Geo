@@ -42,6 +42,7 @@
          *
          *  If you are not using avatars, ignore this.
          */
+      //  [self addPhotoMediaMessage];
         JSQMessagesAvatarImage *jsqImage = [JSQMessagesAvatarImageFactory avatarImageWithUserInitials:@"JSQ"
                                                                                       backgroundColor:[UIColor colorWithWhite:0.85f alpha:1.0f]
                                                                                             textColor:[UIColor colorWithWhite:0.60f alpha:1.0f]

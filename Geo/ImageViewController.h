@@ -10,6 +10,6 @@
 
 @interface ImageViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *view;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end

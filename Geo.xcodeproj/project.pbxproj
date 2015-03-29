@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1B19BD0992D2B25027E59291 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D11B7D3D30C3CC12D55B63 /* libPods.a */; };
-		830E62541AC593C400C8E16B /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E62531AC593C400C8E16B /* ImageViewController.m */; };
+		830E62621AC7A59000C8E16B /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E62571AC7A59000C8E16B /* JTSAnimatedGIFUtility.m */; };
+		830E62631AC7A59000C8E16B /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E62591AC7A59000C8E16B /* JTSImageInfo.m */; };
+		830E62641AC7A59000C8E16B /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E625B1AC7A59000C8E16B /* JTSImageViewController.m */; };
+		830E62651AC7A59000C8E16B /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E625D1AC7A59000C8E16B /* JTSSimpleImageDownloader.m */; };
+		830E62661AC7A59000C8E16B /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E625F1AC7A59000C8E16B /* UIApplication+JTSImageViewController.m */; };
+		830E62671AC7A59000C8E16B /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 830E62611AC7A59000C8E16B /* UIImage+JTSImageEffects.m */; };
 		8315A9F01ABDC52A004612C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315A9DB1ABDC52A004612C2 /* AppDelegate.m */; };
 		8315A9F11ABDC52A004612C2 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315A9DD1ABDC52A004612C2 /* DemoModelData.m */; };
 		8315A9F21ABDC52A004612C2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8315A9DE1ABDC52A004612C2 /* Info.plist */; };
@@ -157,7 +162,6 @@
 		8315ABF01ABDC54D004612C2 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8315AB5F1ABDC54D004612C2 /* DDXMLNode.m */; };
 		8315ABF11ABDC54D004612C2 /* build-libidn.sh in Resources */ = {isa = PBXBuildFile; fileRef = 8315AB631ABDC54D004612C2 /* build-libidn.sh */; };
 		8315ABF21ABDC54D004612C2 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8315AB651ABDC54D004612C2 /* libidn.a */; };
-		8336E5D91AC2738C00832F42 /* MapBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8336E5D81AC2738C00832F42 /* MapBoxViewController.m */; };
 		833C1E271ABDEA8A00535901 /* RadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C1E261ABDEA8A00535901 /* RadiusViewController.m */; };
 		833C1E2A1ABE45F600535901 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C1E291ABE45F600535901 /* WebViewController.m */; };
 		83B0CB5A1ABDD23400EC64D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B0CB591ABDD23400EC64D2 /* Main.storyboard */; };
@@ -189,8 +193,18 @@
 /* Begin PBXFileReference section */
 		32D11B7D3D30C3CC12D55B63 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		616A1B0D3DBFDFD01508943B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		830E62521AC593C400C8E16B /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		830E62531AC593C400C8E16B /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		830E62561AC7A59000C8E16B /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		830E62571AC7A59000C8E16B /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		830E62581AC7A59000C8E16B /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		830E62591AC7A59000C8E16B /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		830E625A1AC7A59000C8E16B /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		830E625B1AC7A59000C8E16B /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		830E625C1AC7A59000C8E16B /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		830E625D1AC7A59000C8E16B /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		830E625E1AC7A59000C8E16B /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		830E625F1AC7A59000C8E16B /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		830E62601AC7A59000C8E16B /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		830E62611AC7A59000C8E16B /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		8315A9DA1ABDC52A004612C2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8315A9DB1ABDC52A004612C2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8315A9DC1ABDC52A004612C2 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -498,8 +512,6 @@
 		8315AB651ABDC54D004612C2 /* libidn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libidn.a; sourceTree = "<group>"; };
 		8315AB661ABDC54D004612C2 /* stringprep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringprep.h; sourceTree = "<group>"; };
 		8315ABF31ABDC579004612C2 /* XMPPFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
-		8336E5D71AC2738C00832F42 /* MapBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBoxViewController.h; sourceTree = "<group>"; };
-		8336E5D81AC2738C00832F42 /* MapBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBoxViewController.m; sourceTree = "<group>"; };
 		833C1E251ABDEA8A00535901 /* RadiusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadiusViewController.h; sourceTree = "<group>"; };
 		833C1E261ABDEA8A00535901 /* RadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadiusViewController.m; sourceTree = "<group>"; };
 		833C1E281ABE45F600535901 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -571,6 +583,25 @@
 				32D11B7D3D30C3CC12D55B63 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		830E62551AC7A59000C8E16B /* JTSImageView */ = {
+			isa = PBXGroup;
+			children = (
+				830E62561AC7A59000C8E16B /* JTSAnimatedGIFUtility.h */,
+				830E62571AC7A59000C8E16B /* JTSAnimatedGIFUtility.m */,
+				830E62581AC7A59000C8E16B /* JTSImageInfo.h */,
+				830E62591AC7A59000C8E16B /* JTSImageInfo.m */,
+				830E625A1AC7A59000C8E16B /* JTSImageViewController.h */,
+				830E625B1AC7A59000C8E16B /* JTSImageViewController.m */,
+				830E625C1AC7A59000C8E16B /* JTSSimpleImageDownloader.h */,
+				830E625D1AC7A59000C8E16B /* JTSSimpleImageDownloader.m */,
+				830E625E1AC7A59000C8E16B /* UIApplication+JTSImageViewController.h */,
+				830E625F1AC7A59000C8E16B /* UIApplication+JTSImageViewController.m */,
+				830E62601AC7A59000C8E16B /* UIImage+JTSImageEffects.h */,
+				830E62611AC7A59000C8E16B /* UIImage+JTSImageEffects.m */,
+			);
+			path = JTSImageView;
 			sourceTree = "<group>";
 		};
 		8315A9FB1ABDC54D004612C2 /* Authentication */ = {
@@ -1434,6 +1465,7 @@
 		83E8CBDE1ABDC1FB00C02B0D = {
 			isa = PBXGroup;
 			children = (
+				830E62551AC7A59000C8E16B /* JTSImageView */,
 				8336E5DA1AC2870B00832F42 /* XMPP */,
 				83E8CBE91ABDC1FB00C02B0D /* Geo */,
 				83E8CC031ABDC1FC00C02B0D /* GeoTests */,
@@ -1478,10 +1510,6 @@
 				833C1E261ABDEA8A00535901 /* RadiusViewController.m */,
 				833C1E281ABE45F600535901 /* WebViewController.h */,
 				833C1E291ABE45F600535901 /* WebViewController.m */,
-				8336E5D71AC2738C00832F42 /* MapBoxViewController.h */,
-				8336E5D81AC2738C00832F42 /* MapBoxViewController.m */,
-				830E62521AC593C400C8E16B /* ImageViewController.h */,
-				830E62531AC593C400C8E16B /* ImageViewController.m */,
 			);
 			path = Geo;
 			sourceTree = "<group>";
@@ -1664,8 +1692,8 @@
 				8315AB951ABDC54D004612C2 /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				8315ABA91ABDC54D004612C2 /* XMPPvCardTempEmail.m in Sources */,
 				8315AB721ABDC54D004612C2 /* XMPPElement.m in Sources */,
+				830E62631AC7A59000C8E16B /* JTSImageInfo.m in Sources */,
 				8315AB891ABDC54D004612C2 /* XMPPUserMemoryStorageObject.m in Sources */,
-				8336E5D91AC2738C00832F42 /* MapBoxViewController.m in Sources */,
 				8315AB7C1ABDC54D004612C2 /* XMPPFileTransfer.m in Sources */,
 				8315ABC01ABDC54D004612C2 /* XMPPMessageArchiving.xcdatamodeld in Sources */,
 				8315ABE21ABDC54D004612C2 /* XMPPTimer.m in Sources */,
@@ -1700,6 +1728,7 @@
 				8315AB8F1ABDC54D004612C2 /* XMPPIQ+LastActivity.m in Sources */,
 				8315AB861ABDC54D004612C2 /* XMPPUserCoreDataStorageObject.m in Sources */,
 				833C1E2A1ABE45F600535901 /* WebViewController.m in Sources */,
+				830E62641AC7A59000C8E16B /* JTSImageViewController.m in Sources */,
 				8315ABB51ABDC54D004612C2 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
 				8315AB901ABDC54D004612C2 /* XMPPLastActivity.m in Sources */,
 				8315ABE31ABDC54D004612C2 /* GCDAsyncSocket.m in Sources */,
@@ -1713,7 +1742,6 @@
 				8315ABB41ABDC54D004612C2 /* XMPPRegistration.m in Sources */,
 				8315ABDC1ABDC54D004612C2 /* DDList.m in Sources */,
 				8315AB8A1ABDC54D004612C2 /* XMPPRoster.m in Sources */,
-				830E62541AC593C400C8E16B /* ImageViewController.m in Sources */,
 				8315ABEE1ABDC54D004612C2 /* DDXMLDocument.m in Sources */,
 				8315AB7B1ABDC54D004612C2 /* XMPPCoreDataStorage.m in Sources */,
 				8315ABE61ABDC54D004612C2 /* DDFileLogger.m in Sources */,
@@ -1723,6 +1751,7 @@
 				8315ABB21ABDC54D004612C2 /* XMPPIQ+XEP_0066.m in Sources */,
 				8315AB681ABDC54D004612C2 /* XMPPDeprecatedDigestAuthentication.m in Sources */,
 				8315A9F61ABDC52A004612C2 /* SMChatViewController.m in Sources */,
+				830E62651AC7A59000C8E16B /* JTSSimpleImageDownloader.m in Sources */,
 				8315AB741ABDC54D004612C2 /* XMPPJID.m in Sources */,
 				8315ABC41ABDC54D004612C2 /* XMPPMessageArchiving.m in Sources */,
 				8315AB841ABDC54D004612C2 /* XMPPRoster.xcdatamodel in Sources */,
@@ -1737,6 +1766,7 @@
 				8315AB821ABDC54D004612C2 /* XMPPGroupCoreDataStorageObject.m in Sources */,
 				8315ABBD1ABDC54D004612C2 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				8315AB731ABDC54D004612C2 /* XMPPIQ.m in Sources */,
+				830E62621AC7A59000C8E16B /* JTSAnimatedGIFUtility.m in Sources */,
 				8315AB6D1ABDC54D004612C2 /* XMPPXOAuth2Google.m in Sources */,
 				8315AB851ABDC54D004612C2 /* XMPPRosterCoreDataStorage.m in Sources */,
 				8315ABC31ABDC54D004612C2 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
@@ -1755,6 +1785,7 @@
 				8315ABA51ABDC54D004612C2 /* XMPPvCardTemp.m in Sources */,
 				8315ABD01ABDC54D004612C2 /* XMPPAutoTime.m in Sources */,
 				8315ABB61ABDC54D004612C2 /* XMPPDateTimeProfiles.m in Sources */,
+				830E62661AC7A59000C8E16B /* UIApplication+JTSImageViewController.m in Sources */,
 				8315ABCF1ABDC54D004612C2 /* XMPPPing.m in Sources */,
 				8315AB711ABDC54D004612C2 /* XMPPConstants.m in Sources */,
 				8315ABD11ABDC54D004612C2 /* XMPPTime.m in Sources */,
@@ -1788,6 +1819,7 @@
 				8315AB9F1ABDC54D004612C2 /* XMPPRoom.m in Sources */,
 				8315AB9E1ABDC54D004612C2 /* XMPPMUC.m in Sources */,
 				8315AB761ABDC54D004612C2 /* XMPPModule.m in Sources */,
+				830E62671AC7A59000C8E16B /* UIImage+JTSImageEffects.m in Sources */,
 				8315ABAF1ABDC54D004612C2 /* XMPPIQ+XEP_0060.m in Sources */,
 				8315A9F11ABDC52A004612C2 /* DemoModelData.m in Sources */,
 				8315ABE51ABDC54D004612C2 /* DDASLLogger.m in Sources */,
