@@ -62,7 +62,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 
 
     // Setup the XMPP stream
-    host = @"5.143.17.232";
+    host = @"5.143.43.41";
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -259,7 +259,8 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 {
 
 
-    NSXMLElement *queryElement = [iq elementForName:@"query" xmlns:@"geo:list:messages"];
+
+    NSXMLElement *queryElement = [iq elementForName:@"query"];
     if(queryElement){
         NSArray *items = [queryElement elementsForName:@"message"];
         NSMutableArray* messages = [[NSMutableArray alloc] init];
@@ -267,7 +268,7 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
         for (NSXMLElement *i in items) {
 
 
-            NSString* text = [[i elementForName:@"text"] stringValue];
+            NSString* text = [[i elementForName:@"body"] stringValue];
             NSString* user = [[i elementForName:@"user"] stringValue];
             NSString* identificator = [[i elementForName:@"id"] stringValue];
             NSString* delivered ;
@@ -294,12 +295,25 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
                 [format setDateFormat:@"dd.MM.yyyy"];
 
                 NSString *string = [format stringFromDate:date];
-                NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:80/images/full/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
-                UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
-                [m setObject:image forKey:@"image"];
+                NSURL *fullUrl = [NSURL URLWithString:[[[@"http://5.143.43.41/images/full/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img]];
+               // NSData* data =[NSData dataWithContentsOfURL:url];
+
+             //   UIImage *image = [UIImage imageWithData: data];
+                NSURL *url = [NSURL URLWithString:[[[@"http://5.143.43.41/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img]];
+                 NSData* data =[NSData dataWithContentsOfURL:url];
+
+                   UIImage *image = [UIImage imageWithData: data];
+
+                if(url){
+                    [m setObject:fullUrl forKey:@"url"];
+                    [m setObject:image forKey:@"image"];
+                }
 
             }
-            [m setObject:text forKey:@"msg"];
+            if(text)
+                [m setObject:text forKey:@"msg"];
+            else
+                [m setObject:@"" forKey:@"msg"];
             [m setObject:user forKey:@"sender"];
             [m setObject:date forKey:@"date"];
             [m setObject:identificator forKey:@"id"];
@@ -324,15 +338,16 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message {
     NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
     NSXMLElement* mes;
+
     if (!(mes = [message elementForName:@"received"])){
-        NSString *msg = [[message elementForName:@"text"] stringValue];
+        NSString *msg = [[message elementForName:@"body"] stringValue];
         NSString *from = [[message elementForName:@"user"] stringValue];
         NSString *identificator = [[message elementForName:@"id"] stringValue];
         // UIImage * image  = [[message elementForName:@"img"]];
 
         NSString* delivered ;
         if(!identificator){
-            identificator =@"1";
+            identificator =@"0";
         }
         NSDate *date = [[NSDate alloc]init];
 
@@ -353,9 +368,10 @@ static const int xmppLogLevel = XMPP_LOG_LEVEL_VERBOSE;
             [format setDateFormat:@"dd.MM.yyyy"];
 
             NSString *string = [format stringFromDate:date];
-            NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:5223/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".jpg"]];
-            UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
-            [m setObject:image forKey:@"image"];
+            NSURL *url = [NSURL URLWithString:[[[[@"http://5.143.17.232:5223/images/preview/" stringByAppendingString:string] stringByAppendingString:@"/"] stringByAppendingString:img] stringByAppendingString:@".png"]];
+//            UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+
+            [m setObject:url forKey:@"url"];
 
         }
 

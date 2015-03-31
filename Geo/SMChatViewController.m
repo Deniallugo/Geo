@@ -1,4 +1,4 @@
-//
+    //
 //  SMChatViewController.m
 //  GeoChatWithXMPP
 //
@@ -261,24 +261,26 @@
     NSDate* date = [messageContent valueForKey:@"date"];
     NSString* identificator = [messageContent valueForKey:@"id"];
     JSQMessage *m   ;
-    UIImage* imagePic = [messageContent valueForKey:@"image"];
-    if(imagePic){
+    NSURL* url = [messageContent valueForKey:@"url"];
+    UIImage *prevImage = [messageContent valueForKey:@"image"];
 
-        //        CGSize newSize = CGSizeMake(10, 10);
-        //
-        //        UIGraphicsBeginImageContext(newSize);
-        //
-        //        //UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
-        //        [imagePic drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-        //        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-        //        UIGraphicsEndImageContext();
+    id<JSQMessageMediaData> newMediaData = nil;
 
+    if(url){
 
-        JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:imagePic];
-        m = [[JSQMessage alloc] initWithSenderId:self.senderId
-                               senderDisplayName:self.senderId
+        JSQPhotoMediaItem *photoItem = [[JSQPhotoMediaItem alloc] initWithImage:nil];
+
+      //  newMediaAttachmentCopy = [UIImage imageWithCGImage:photoItem.image.CGImage];
+
+        //photoItem.image = nil;
+
+        newMediaData = photoItem;
+
+        m = [[JSQMessage alloc] initWithSenderId:sender
+                               senderDisplayName:sender
                                             date:[NSDate dateWithTimeIntervalSinceNow:0]
-                                           media:photoItem];
+                                           media:newMediaData];
+
     }
     else{
         m = [[JSQMessage alloc] initWithSenderId:sender
@@ -299,43 +301,41 @@
 
     [JSQSystemSoundPlayer jsq_playMessageReceivedSound];
     [self.demoData.messages addObject:m];
-    [self finishReceivingMessageAnimated:animated];
+    [self finishReceivingMessageAnimated:NO];
 
 
 
-    //        if (newMessage.isMediaMessage) {
-    //            /**
-    //             *  Simulate "downloading" media
-    //             */
-    //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //                /**
-    //                 *  Media is "finished downloading", re-display visible cells
-    //                 *
-    //                 *  If media cell is not visible, the next time it is dequeued the view controller will display its new attachment data
-    //                 *
-    //                 *  Reload the specific item, or simply call `reloadData`
-    //                 */
-    //
-    //                if ([newMediaData isKindOfClass:[JSQPhotoMediaItem class]]) {
-    //                    ((JSQPhotoMediaItem *)newMediaData).image = newMediaAttachmentCopy;
-    //                    [self.collectionView reloadData];
-    //                }
-    //                else if ([newMediaData isKindOfClass:[JSQLocationMediaItem class]]) {
-    //                    [((JSQLocationMediaItem *)newMediaData)setLocation:newMediaAttachmentCopy withCompletionHandler:^{
-    //                        [self.collectionView reloadData];
-    //                    }];
-    //                }
-    //                else if ([newMediaData isKindOfClass:[JSQVideoMediaItem class]]) {
-    //                    ((JSQVideoMediaItem *)newMediaData).fileURL = newMediaAttachmentCopy;
-    //                    ((JSQVideoMediaItem *)newMediaData).isReadyToPlay = YES;
-    //                    [self.collectionView reloadData];
-    //                }
-    //                else {
-    //                    NSLog(@"%s error: unrecognized media item", __PRETTY_FUNCTION__);
-    //                }
-    //
-    //            });
-    //        }
+
+    if (m.isMediaMessage) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+
+
+            /**
+             *  Media is "finished downloading", re-display visible cells
+             *
+             *  If media cell is not visible, the next time it is dequeued the view controller will display its new attachment data
+             *
+             *  Reload the specific item, or simply call `reloadData`
+       
+             */
+            id newMediaAttachment = nil;
+
+
+            NSData* data =[NSData dataWithContentsOfURL:url];
+            UIImage *image = [UIImage imageWithData: data];
+            newMediaAttachment = [UIImage imageWithCGImage:image.CGImage];
+
+            ((JSQPhotoMediaItem *)newMediaData).image = newMediaAttachment;
+            [self.collectionView reloadData];
+
+
+
+        });
+    }
+
+
 
 
 
@@ -356,7 +356,23 @@
 
 
 
++ (NSString *)contentTypeForImageData:(NSData *)data {
+    uint8_t c;
+    [data getBytes:&c length:1];
 
+    switch (c) {
+        case 0xFF:
+            return @"jpeg";
+        case 0x89:
+            return @"png";
+        case 0x47:
+            return @"gif";
+        case 0x49:
+        case 0x4D:
+            return @"tiff";
+    }
+    return nil;
+}
 
 -(void) sendImage: (UIImage*) imagePic{
     identifier++;
@@ -384,21 +400,28 @@
 
         NSData *dataPic =  UIImagePNGRepresentation(imagePic);
 
+
+        NSString* type = [SMChatViewController contentTypeForImageData:dataPic];
         //        NSXMLElement *photo = [NSXMLElement elementWithName:@"PHOTO"];
+
+        NSXMLElement *ext = [NSXMLElement elementWithName:@"ext" stringValue:type];
 
         NSXMLElement *image = [NSXMLElement elementWithName:@"image"];
 
         //        [photo addChild:binval];
 
         NSString *base64String = [dataPic base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+        NSXMLElement *data = [NSXMLElement elementWithName:@"data" stringValue:base64String];
 
-        [image setStringValue:base64String];
-
+       // UIImage* img =[]
+        [image addChild:ext];
+        [image addChild:data];
         [message addChild:body];
 
         [message addChild:geo];
 
         [message addChild:image];
+        [message addAttributeWithName:@"id" intValue:identifier];
 
 
     }
@@ -416,6 +439,8 @@
                                        senderDisplayName:self.senderId
                                                     date:[NSDate dateWithTimeIntervalSinceNow:0]
                                                    media:photoItem];
+    m.identifier = [NSString stringWithFormat:@"%ld", (long)identifier];
+
 
     m.delivered = NO;
     [self.demoData.messages addObject:m];
@@ -437,12 +462,13 @@
     identifier++;
     NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
     [body setStringValue:text];
+    
     DDXMLElement *geo = [DDXMLElement elementWithName:@"geoloc" xmlns:@"http://jabber.org/protocol/geoloc"];
 
 
     NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
-
     [message addAttributeWithName:@"id" intValue:identifier];
+
 
     NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
     NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
@@ -463,6 +489,7 @@
                                                     text:text];
     m.delivered = NO;
     m.identifier = [NSString stringWithFormat:@"%ld", (long)identifier];
+
     [self.demoData.messages addObject:m];
 
     [self finishSendingMessageAnimated:YES];
@@ -479,7 +506,7 @@
     NSXMLElement * latitude = [NSXMLElement elementWithName:@"lat" stringValue:GeoLatitude];
     NSXMLElement * longitude = [NSXMLElement elementWithName:@"lon" stringValue:GeoLongtitude];
     NSXMLElement * radius = [NSXMLElement elementWithName:@"radius" stringValue:[NSString stringWithFormat:@"%.20lf", Radius ] ];
-    NSXMLElement * number = [NSXMLElement elementWithName:@"number" stringValue:@"30"];
+    NSXMLElement * number = [NSXMLElement elementWithName:@"number" stringValue:@"3"];
 
     DDXMLElement *geo = [DDXMLElement elementWithName:@"geoloc"];
     [geo addChild:latitude];
@@ -619,6 +646,8 @@
 
 
 }
+
+
 
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -805,6 +834,10 @@
 
         cell.textView.linkTextAttributes = @{ NSForegroundColorAttributeName : cell.textView.textColor,
                                               NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid) };
+        loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(145, 190, 20,20)]; [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray]; [loadingIndicator setHidesWhenStopped:YES];
+        [cell addSubview:loadingIndicator];
+
+
     }
 
     return cell;
@@ -873,6 +906,8 @@
 
 - (void)collectionView:(JSQMessagesCollectionView *)collectionView didTapAvatarImageView:(UIImageView *)avatarImageView atIndexPath:(NSIndexPath *)indexPath
 {
+    [loadingIndicator startAnimating];
+
     NSLog(@"Tapped avatar!");
 }
 

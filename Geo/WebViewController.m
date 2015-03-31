@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.navigationItem.title=@"Карта с сообщениями";
 
-    NSString *fullURL =@"http://5.143.17.232:80/?lon=" ;
+    NSString *fullURL =@"http://5.143.43.41:80/?lon=" ;
 
     NSString* lat =[[[[NSNumber numberWithFloat:self.longtitude] stringValue] stringByAppendingString:@"&lat="] stringByAppendingString:[[NSNumber numberWithFloat:self.latitude] stringValue]];
 

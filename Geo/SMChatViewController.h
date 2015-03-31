@@ -39,6 +39,7 @@
     NSMutableArray *turnSockets;
     NSInteger identifier;
     
+    UIActivityIndicatorView *loadingIndicator;
 
     NSInteger timeInterval;
 

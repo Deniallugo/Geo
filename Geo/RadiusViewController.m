@@ -11,6 +11,8 @@
 @interface RadiusViewController ()
 @end
 
+
+
 @implementation RadiusViewController
 
 - (void)viewDidLoad {
@@ -19,7 +21,7 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated {
-    self.slider.value = _radius1/100000;
+    self.slider.value = [self trueRadius:_radius1];
     self.viewRadius.text = [NSString stringWithFormat:@"%f",self->_radius1 ];
     self.navigationItem.title=@"Изменить радиус";
 
@@ -44,9 +46,33 @@
 - (IBAction)okButton:(id)sender {
 }
 
+
+
 - (IBAction)changeRadius:(id)sender {
-        self->_radius1 = self.slider.value * 100000 + 0.1;
+    self->_radius1 =[self trueRadius: self.slider.value];
         self.viewRadius.text = [NSString stringWithFormat:@"%f",self->_radius1 ];
+}
+
+-(NSInteger)trueRadius:(float) value{
+
+    if(value < 0.01)
+        return value*10 + 0.1;
+
+    if(value < 0.1)
+        return value*100 + 0.1;
+    if( value < 1)
+        return value*10000 + 0.1;
+
+
+
+    if(value > 100)
+        return value/100000;
+    if( value > 1)
+        return value/1000;
+    else
+        return 0;
+
+
 }
 
 
